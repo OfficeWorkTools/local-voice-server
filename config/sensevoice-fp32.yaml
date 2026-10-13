@@ -1,0 +1,8 @@
+name: sensevoice-fp32
+description: Official SenseVoiceSmall, native FunASR CPU FP32
+backend: funasr
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: SenseVoiceSmall-official

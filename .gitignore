@@ -1,0 +1,13 @@
+.localai/
+__pycache__/
+*.pyc
+.venv/
+.env
+*.log
+*.wav
+*.mp3
+*.pt
+*.onnx
+*.bin
+credentials*
+.codebase-memory/

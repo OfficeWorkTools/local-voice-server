@@ -1,0 +1,62 @@
+{
+  "port": 8768,
+  "model": "sensevoice-fp32",
+  "ui_and_model_list": "passed",
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "zh",
+      "http_seconds": 0.214,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "http_seconds": 0.206,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "",
+      "http_seconds": 0.21,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "http_seconds": 0.201,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "zh",
+      "http_seconds": 0.138,
+      "text": "放进你的圈里里面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "http_seconds": 0.187,
+      "text": "放进你的圈利里面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "",
+      "http_seconds": 0.198,
+      "text": "放进你的圈里面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "http_seconds": 0.19,
+      "text": "放进你的圈利里面"
+    }
+  ],
+  "mixed_reference": "放進你的 training 裡面",
+  "mixed_english_recovered": [
+    false,
+    false,
+    false,
+    false
+  ]
+}

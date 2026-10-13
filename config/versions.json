@@ -1,0 +1,46 @@
+{
+  "localai": {
+    "version": "v4.11.0",
+    "url": "https://github.com/mudler/LocalAI/releases/download/v4.11.0/local-ai-v4.11.0-linux-amd64",
+    "sha256": "2211f0c5923db1cb9213006bbc34db1f8cddb68b6342026603d9128997920a74"
+  },
+  "backend": {
+    "gallery_source": "github:mudler/LocalAI/backend/index.yaml@v4.11.0",
+    "uri": "oci://quay.io/go-skynet/local-ai-backends@sha256:609ad91ad3d7e3808cc50dc5427e6a44b61ca7a6aed3e4b03a16de6cd3266b43",
+    "digest": "sha256:609ad91ad3d7e3808cc50dc5427e6a44b61ca7a6aed3e4b03a16de6cd3266b43",
+    "backend_py_sha256": "a1a9fd436c5bcb0e5498d4a3c0dfa875fae05c8bc2feb2e0367ce349ac43d04b"
+  },
+  "model": {
+    "repo": "FunAudioLLM/SenseVoiceSmall",
+    "revision": "3847d57b6bdf2dd8875cb1508d2af43d80a16bf7",
+    "files": {
+      "model.pt": "833ca2dcfdf8ec91bd4f31cfac36d6124e0c459074d5e909aec9cabe6204a3ea",
+      "config.yaml": "f71e239ba36705564b5bf2d2ffd07eece07b8e3f2bbf6d2c99d8df856339ac19",
+      "configuration.json": "02810a7f8e9e8aee10370a265f7e799728ce25b4c00cdbf4602b303ee395a38e",
+      "am.mvn": "29b3c740a2c0cfc6b308126d31d7f265fa2be74f3bb095cd2f143ea970896ae5",
+      "chn_jpn_yue_eng_ko_spectok.bpe.model": "aa87f86064c3730d799ddf7af3c04659151102cba548bce325cf06ba4da4e6a8",
+      "README.md": "6add90487ea3d685b6604ad0932b565fc5cf7e9daaf8aebc674de49da4560958"
+    }
+  },
+  "samples": {
+    "chinese": {
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen3-ASR-Repo/asr_zh.wav",
+      "sha256": "46dbc998c9d1d48111267c40741dd3200f2e5bcf4075f8c4c97f4451160dce50"
+    },
+    "mixed": {
+      "metadata_url": "https://datasets-server.huggingface.co/rows?dataset=ky552%2FML2021_ASR_ST&config=default&split=test&offset=1279&length=1",
+      "sha256": "234934f0b8d6fe781a6f6cdebe7835ef5d2c290ebdd181b4736c79c28e5d2313",
+      "reference": "放進你的 training 裡面"
+    }
+  },
+  "vad": {
+    "repo": "iic/speech_fsmn_vad_zh-cn-16k-common-pytorch",
+    "source": "https://modelscope.cn/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch",
+    "files": {
+      "model.pt": "b3be75be477f0780277f3bae0fe489f48718f585f3a6e45d7dd1fbb1a4255fc5",
+      "config.yaml": "486861ca26ddb79081663b6179cb204c6bfae71c52f04aafc48a9e9d8dde1e93",
+      "configuration.json": "7bce8867e37d55c3dd8f672695ced18077a2be199ea529a5d432d5350fc0acba",
+      "am.mvn": "6820fef9687708c4fc3fab2530179c8fcea6262daa25514380056cd8f6eb1754"
+    }
+  }
+}

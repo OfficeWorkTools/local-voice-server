@@ -1,0 +1,12 @@
+{
+  "source_model": "FunAudioLLM/SenseVoiceSmall",
+  "revision": "3847d57b6bdf2dd8875cb1508d2af43d80a16bf7",
+  "model_sha256": "833ca2dcfdf8ec91bd4f31cfac36d6124e0c459074d5e909aec9cabe6204a3ea",
+  "parameter_dtypes": {
+    "torch.float32": 917
+  },
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "native_backend_load_passed": true,
+  "vad_files_verified": true
+}
