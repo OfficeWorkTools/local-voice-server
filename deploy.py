@@ -11,12 +11,12 @@ import subprocess
 import sys
 import time
 import urllib.request
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 STATE = ROOT / ".localai"
 BACKEND = STATE / "backends/cpu-funasr"
-MODEL = STATE / "models/SenseVoiceSmall-official"
 UNIT = "localai-sensevoice-fp32.service"
 UNIT_PATH = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config")) / "systemd/user" / UNIT
 PINS = json.loads((ROOT / "config/versions.json").read_text())
@@ -54,18 +54,67 @@ def port():
     return json.loads((STATE / "install.json").read_text())["port"]
 
 
+def selected_model():
+    path = STATE / "install.json"
+    return json.loads(path.read_text()).get("model", "sensevoice-fp32") if path.exists() else "sensevoice-fp32"
+
+
 def ensure_owner():
     if UNIT_PATH.exists() and f"WorkingDirectory={STATE}\n" not in UNIT_PATH.read_text():
         raise RuntimeError(f"{UNIT} belongs to another checkout; refusing to overwrite or control it")
 
 
 def repair_link():
-    link = BACKEND / "SenseVoiceSmall-official"
+    for profile in PINS["profiles"].values():
+        directory = profile["directory"]
+        if not (STATE / "models" / directory / "model.pt").exists():
+            continue
+        link = BACKEND / directory
+        if link.is_symlink():
+            link.unlink()
+        elif link.exists():
+            raise RuntimeError(f"Refusing to replace a real directory: {link}")
+        link.symlink_to(f"../../models/{directory}", target_is_directory=True)
+
+
+def prepare_conversion():
+    package = STATE / "conversion/opencc.whl"
+    download(PINS["opencc"]["url"], package, PINS["opencc"]["sha256"])
+    with zipfile.ZipFile(package) as archive:
+        for entry in archive.namelist():
+            if entry.startswith("opencc/"):
+                if ".." in Path(entry).parts:
+                    raise RuntimeError("Unsafe wheel path")
+                archive.extract(entry, STATE / "conversion")
+    link = BACKEND / "opencc"
     if link.is_symlink():
         link.unlink()
     elif link.exists():
-        raise RuntimeError(f"Refusing to replace a real directory: {link}")
-    link.symlink_to("../../models/SenseVoiceSmall-official", target_is_directory=True)
+        raise RuntimeError("Refusing to replace an existing OpenCC directory")
+    link.symlink_to("../../conversion/opencc", target_is_directory=True)
+    shutil.copyfile(ROOT / "scripts/transcription_conversion.py", BACKEND / "transcription_conversion.py")
+    source = BACKEND / "backend.py"
+    backup = BACKEND / "backend.upstream.py"
+    expected = PINS["backend"]["backend_py_sha256"]
+    if not backup.exists():
+        if digest(source) != expected:
+            raise RuntimeError("Unknown backend; refusing to patch")
+        shutil.copyfile(source, backup)
+    if digest(backup) != expected:
+        raise RuntimeError("Upstream backend backup checksum mismatch")
+    original = backup.read_text()
+    old_line = "seg_text = rich_transcription_postprocess(seg_text)"
+    if original.count("import torch\n") != 1 or original.count(old_line) != 1:
+        raise RuntimeError("Backend patch anchors changed")
+    patched = original.replace("import torch\n", "import torch\nfrom transcription_conversion import convert_text\n")
+    patched = patched.replace(old_line, "seg_text = convert_text(rich_transcription_postprocess(seg_text))")
+    if source.read_text() not in (original, patched):
+        raise RuntimeError("Backend contains unrecognized edits; refusing to overwrite")
+    source.write_text(patched)
+    (STATE / "reports/backend-extension.json").write_text(json.dumps({
+        "upstream_sha256": expected, "patched_sha256": digest(source),
+        "conversion_module_sha256": digest(BACKEND / "transcription_conversion.py"),
+        "opencc_wheel_sha256": PINS["opencc"]["sha256"], "mode": "s2t"}, indent=2) + "\n")
 
 
 def write_unit(service_port):
@@ -74,10 +123,10 @@ def write_unit(service_port):
     command = [str(binary), "run", "--address", f"127.0.0.1:{service_port}",
                "--models-path", str(STATE / "models"), "--backends-path", str(STATE / "backends"),
                "--data-path", str(STATE / "data"), "--galleries=[]", "--threads", "8",
-               "--load-to-memory", "sensevoice-fp32", "--max-active-backends", "1"]
+               "--load-to-memory", selected_model(), "--max-active-backends", "1"]
     UNIT_PATH.parent.mkdir(parents=True, exist_ok=True)
     UNIT_PATH.write_text(f"""[Unit]
-Description=LocalAI SenseVoiceSmall CPU FP32
+Description=LocalAI Traditional Chinese CPU ASR
 
 [Service]
 Type=simple
@@ -100,14 +149,14 @@ WantedBy=default.target
 """)
 
 
-def install(service_port):
+def install(service_port, model_id):
     if sys.version_info < (3, 11):
         raise RuntimeError("Python 3.11 or newer is required")
     if platform.system() != "Linux" or platform.machine() != "x86_64":
         raise RuntimeError("Only Linux x86_64 is supported")
     if any(c.isspace() or c in '\"$%\\' for c in str(ROOT) + sys.executable):
         raise RuntimeError("Use a checkout and Python path without whitespace, quotes, $, %, or backslashes")
-    for command in ("curl", "ffmpeg", "systemctl"):
+    for command in ("curl", "ffmpeg", "bash", "systemctl"):
         if not shutil.which(command):
             raise RuntimeError(f"Missing prerequisite: {command}")
     ensure_owner()
@@ -115,6 +164,7 @@ def install(service_port):
     if subprocess.run(["systemctl", "--user", "is-active", "--quiet", UNIT]).returncode == 0:
         run("systemctl", "--user", "stop", UNIT)
     with socket.socket() as probe:
+        probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         probe.bind(("127.0.0.1", service_port))
     if shutil.disk_usage(ROOT).free < 6 * 1024**3:
         raise RuntimeError("At least 6 GiB free disk space is required")
@@ -140,12 +190,12 @@ def install(service_port):
                 time.sleep(2)
     if json.loads(metadata.read_text())["digest"] != PINS["backend"]["digest"]:
         raise RuntimeError("Installed backend digest differs from the pinned version")
-    if digest(BACKEND / "backend.py") != PINS["backend"]["backend_py_sha256"]:
-        raise RuntimeError("Installed backend.py differs from the verified official backend")
-    model = PINS["model"]
+    profile = PINS["profiles"][model_id]
+    model = PINS[profile["model_key"]]
+    model_directory = STATE / "models" / profile["directory"]
     for filename, expected in model["files"].items():
         download(f"https://huggingface.co/{model['repo']}/resolve/{model['revision']}/{filename}",
-                 MODEL / filename, expected)
+                 model_directory / filename, expected)
     chinese = PINS["samples"]["chinese"]
     download(chinese["url"], STATE / "samples/chinese.wav", chinese["sha256"])
     mixed = PINS["samples"]["mixed"]
@@ -158,37 +208,49 @@ def install(service_port):
         download(source, mixed_file, mixed["sha256"])
     run("ffmpeg", "-nostdin", "-v", "error", "-y", "-i", mixed_file,
         "-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le", "-bitexact", STATE / "samples/mixed.wav")
-    shutil.copyfile(ROOT / "config/sensevoice-fp32.yaml", STATE / "models/sensevoice-fp32.yaml")
+    shutil.copyfile(ROOT / f"config/{model_id}.yaml", STATE / f"models/{model_id}.yaml")
     repair_link()
-    (STATE / "install.json").write_text(json.dumps({"port": service_port}) + "\n")
+    prepare_conversion()
+    (STATE / "install.json").write_text(json.dumps({"port": service_port, "model": model_id}) + "\n")
     # The official entrypoint relocates the bundled Python before direct verification.
     run(BACKEND / "run.sh", "--help", cwd=BACKEND, env=environment(), stdout=subprocess.DEVNULL)
     # Validate actual loaded parameters before starting this checkout's service.
-    run(BACKEND / "venv/bin/python", ROOT / "scripts/verify_fp32.py", env=environment())
+    run(BACKEND / "venv/bin/python", ROOT / "scripts/check_conversion.py", env=environment())
+    run(BACKEND / "venv/bin/python", ROOT / "scripts/verify_model.py", env=environment())
     write_unit(service_port)
     run("systemctl", "--user", "daemon-reload")
     run("systemctl", "--user", "enable", "--now", UNIT)
     run(sys.executable, ROOT / "scripts/check_api.py")
-    print(f"GUI: http://127.0.0.1:{service_port}/app/models?view=installed&model=sensevoice-fp32")
+    print(f"GUI: http://127.0.0.1:{service_port}/app/models?view=installed&model={model_id}")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["install", "start", "stop", "restart", "status", "logs", "test", "verify-fp32", "repair-link"])
+    parser.add_argument("command", choices=["install", "switch", "start", "stop", "restart", "status", "logs", "test", "verify-model", "verify-fp32", "repair-link"])
+    parser.add_argument("profile", nargs="?", choices=list(PINS["profiles"]), help="Profile for switch")
+    parser.add_argument("--model", choices=list(PINS["profiles"]), help="Profile for install; default SenseVoice on a fresh checkout")
     parser.add_argument("--port", type=int, help="Installation port; default 8767 on a fresh checkout")
     args = parser.parse_args()
     if args.command != "install" and args.port is not None:
         parser.error("--port is only accepted with install")
+    if args.command != "install" and args.model is not None:
+        parser.error("--model is only accepted with install")
+    if (args.command == "switch") != (args.profile is not None):
+        parser.error("Use switch <profile>; other commands do not accept a positional profile")
     if args.command == "install":
         service_port = args.port if args.port is not None else (port() if (STATE / "install.json").exists() else 8767)
         if not 1024 <= service_port <= 65535:
             parser.error("Use a port from 1024 to 65535")
-        install(service_port)
+        install(service_port, args.model or selected_model())
+    elif args.command == "switch":
+        install(port(), args.profile)
     elif args.command == "test":
         run(sys.executable, ROOT / "scripts/check_api.py")
-    elif args.command == "verify-fp32":
+    elif args.command in ("verify-fp32", "verify-model"):
+        if args.command == "verify-fp32" and selected_model() != "sensevoice-fp32":
+            raise RuntimeError("verify-fp32 is the SenseVoice guarantee; use verify-model for other profiles")
         run(BACKEND / "run.sh", "--help", cwd=BACKEND, env=environment(), stdout=subprocess.DEVNULL)
-        run(BACKEND / "venv/bin/python", ROOT / "scripts/verify_fp32.py", env=environment())
+        run(BACKEND / "venv/bin/python", ROOT / "scripts/verify_model.py", env=environment())
     elif args.command == "repair-link":
         repair_link()
     else:

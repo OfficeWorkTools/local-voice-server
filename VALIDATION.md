@@ -19,3 +19,17 @@
 重啟後的完整 HTTP 延遲、原生文字與英文誤辨記錄見 [validation/api.json](validation/api.json)。中文與中英都有文字輸出，但四種 language 都沒有辨識出參考文字中的 `training`；這是功能成功、該樣本英文辨識失敗，並未量測一般字錯率。
 
 未驗證：另一台實體電腦、其他 Linux 發行版／架構、重新開機、完全斷網啟動、從 `Linger=no` 啟用、長句、高負載、使用者麥克風或 VocaLinux GUI 聽寫。系統套件原已安裝，因此 README 的 apt 前提步驟不是乾淨 OS 重建證據。後端有自己的固定 Python 套件，但 ModelScope VAD 的上游 cache／網路檢查仍可能影響初次啟動。
+
+## 繁體與模型切換驗證，2026-10-13
+
+以下是加入原生 FunASR OpenCC 擴充與 profiles 後的驗證，前段及原 `api.json`／`fp32.json` 保留初始部署紀錄。
+
+- OpenCC `s2t` 檢查中文、空字串及英文／數字／換行；見 [validation/conversion.json](validation/conversion.json)。固定官方後端的小補丁與 helper／wheel hash 見 [validation/backend-extension.json](validation/backend-extension.json)。
+- 在獨立新目錄、沒有舊 binary／venv／權重／cache 的環境，於 8769 完成完整下載、安裝、OpenCC 擴充、FP32、暖機、自測；再重跑安裝與重啟。兩段真實 HTTP 繁體結果見 [validation/clean-traditional-api.json](validation/clean-traditional-api.json)。這是同一台實體電腦的新 runtime，沒有冒充另一台機器。
+- 於 8768 及正式 8767 驗證 Paraformer → SenseVoice 往返切換。實際檔案 hash、模型 class、precision、model directory 均不同；每次 system endpoint 僅有一個常駐模型。正式 8767 已恢復 SenseVoice，見 [validation/switch.json](validation/switch.json)。
+- SenseVoice 真實載入為 `SenseVoiceSmall`、CPU、917 個 float32 參數張量，部署 YAML 與模型 symlink 必須匹配 profile；見 [validation/sensevoice-model.json](validation/sensevoice-model.json)。此數目是參數張量數，不是 scalar 參數總量。
+- 第二個官方 `funasr/paraformer-zh` 的實際 class 為 `Paraformer`，956 個 float32 參數張量，權重 SHA256 與 SenseVoice 不同；見 [validation/paraformer-model.json](validation/paraformer-model.json)。
+- 中文及中英音訊、四種 language、JSON text／segments 一致、GUI 可達、模型清單：見 [validation/traditional-api.json](validation/traditional-api.json)、[validation/paraformer-api.json](validation/paraformer-api.json)。原生輸出現在經字詞轉繁體，`training` 仍有誤辨，沒有宣稱改善辨識。
+- 同埠關閉後的 TIME_WAIT 曾被探測誤判為占用；加入 SO_REUSEADDR 後，正式 8767 更新、重啟與往返切換通過，原 8766 服務持續運作。舊 LocalAI 檔案與單元保留但停用，防止重新開機搶同一埠。
+
+未測另一台電腦、斷網、重新開機、任意其他 backend、串流／字幕格式、長句及一般字錯率。新 profiles／繁體擴充並未增加 ITN、第二個 HTTP 埠、代理或 LLM 改寫。

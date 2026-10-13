@@ -1,0 +1,63 @@
+{
+  "port": 8767,
+  "model": "paraformer-zh",
+  "ui_and_model_list": "passed",
+  "traditional_chinese": "passed",
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "zh",
+      "http_seconds": 0.178,
+      "text": "甚至出現交易幾乎停滯的情況"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "http_seconds": 0.198,
+      "text": "甚至出現交易幾乎停滯的情況"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "",
+      "http_seconds": 0.206,
+      "text": "甚至出現交易幾乎停滯的情況"
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "http_seconds": 0.195,
+      "text": "甚至出現交易幾乎停滯的情況"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "zh",
+      "http_seconds": 0.15,
+      "text": "放進你的traind裏面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "http_seconds": 0.141,
+      "text": "放進你的trarend裏面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "",
+      "http_seconds": 0.133,
+      "text": "放進你的traind裏面"
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "http_seconds": 0.117,
+      "text": "放進你的trarend裏面"
+    }
+  ],
+  "mixed_reference": "放進你的 training 裡面",
+  "mixed_english_recovered": [
+    false,
+    false,
+    false,
+    false
+  ]
+}

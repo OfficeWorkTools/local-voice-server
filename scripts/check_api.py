@@ -10,7 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / ".localai"
-PORT = json.loads((STATE / "install.json").read_text())["port"]
+SETTINGS = json.loads((STATE / "install.json").read_text())
+PORT = SETTINGS["port"]
+MODEL = SETTINGS.get("model", "sensevoice-fp32")
 BASE = f"http://127.0.0.1:{PORT}"
 
 
@@ -20,7 +22,7 @@ def transcribe(filename, language):
         assert (wav.getframerate(), wav.getnchannels(), wav.getsampwidth()) == (16000, 1, 2)
     boundary = uuid.uuid4().hex
     body = bytearray()
-    fields = {"model": "sensevoice-fp32"}
+    fields = {"model": MODEL}
     if language is not None:
         fields["language"] = language
     for key, value in fields.items():
@@ -36,6 +38,9 @@ def transcribe(filename, language):
     assert result.get("text") and "<|" not in result["text"], result
     if filename == "chinese.wav":
         assert "交易" in result["text"], result
+        assert "出現" in result["text"] and "出现" not in result["text"], result
+    if result.get("segments"):
+        assert "".join(segment["text"] for segment in result["segments"]) == result["text"], result
     return {"sample": filename, "language": language, "http_seconds": round(time.perf_counter() - start, 3),
             "text": result["text"]}
 
@@ -57,15 +62,16 @@ def main():
         print(json.dumps(transcribe("chinese.wav", "zh"), ensure_ascii=False))
         return
     with urllib.request.urlopen(BASE + "/v1/models", timeout=5) as response:
-        assert any(model["id"] == "sensevoice-fp32" for model in json.load(response)["data"])
+        assert any(model["id"] == MODEL for model in json.load(response)["data"])
     with urllib.request.urlopen(BASE + "/app/models?view=installed", timeout=5) as response:
         assert response.status == 200
     results = [transcribe(sample, language) for sample in ("chinese.wav", "mixed.wav")
                for language in ("zh", "auto", "", None)]
-    report = {"port": PORT, "model": "sensevoice-fp32", "ui_and_model_list": "passed", "results": results,
+    report = {"port": PORT, "model": MODEL, "ui_and_model_list": "passed", "traditional_chinese": "passed", "results": results,
               "mixed_reference": "放進你的 training 裡面",
               "mixed_english_recovered": ["training" in row["text"].lower() for row in results if row["sample"] == "mixed.wav"]}
     (STATE / "reports/api.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    (STATE / f"reports/{MODEL}-api.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 

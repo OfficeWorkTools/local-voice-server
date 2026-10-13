@@ -42,5 +42,39 @@
       "configuration.json": "7bce8867e37d55c3dd8f672695ced18077a2be199ea529a5d432d5350fc0acba",
       "am.mvn": "6820fef9687708c4fc3fab2530179c8fcea6262daa25514380056cd8f6eb1754"
     }
+  },
+  "paraformer": {
+    "repo": "funasr/paraformer-zh",
+    "revision": "d7811ee3ac581fbcfdeb37c98c6ba674028433dc",
+    "files": {
+      "README.md": "513555aa084cc8a00e7bf1c916e659dfa9f70166ce6aaf6fe281c537bd6f1053",
+      "configuration.json": "b7d2917954fc547e43ad61486a5248596738cf5909907eade11e71c56f446f34",
+      "config.yaml": "bfd424b9f61846aac63591e96fe24d66b35f4643bddcb4b9bb759db8f987ab79",
+      "am.mvn": "29b3c740a2c0cfc6b308126d31d7f265fa2be74f3bb095cd2f143ea970896ae5",
+      "tokens.json": "2b20c2b12572d682afff84ce1c8d560f67b8b32a4c1f21567411d141ed352127",
+      "model.pt": "5bba782a5e9196166233b9ab12ba04cadff9ef9212b4ff6153ed9290ff679025",
+      "seg_dict": "59a2ef803a3f1648ad03a2e1480db1c1ee0c0d7dc4ef4dbd16cea33944329022"
+    }
+  },
+  "profiles": {
+    "sensevoice-fp32": {
+      "model_key": "model",
+      "directory": "SenseVoiceSmall-official",
+      "model_class": "SenseVoiceSmall",
+      "precision": "float32",
+      "parameter_count": 917
+    },
+    "paraformer-zh": {
+      "model_key": "paraformer",
+      "directory": "Paraformer-zh-official",
+      "model_class": "Paraformer",
+      "precision": "float32"
+    }
+  },
+  "opencc": {
+    "version": "0.1.7",
+    "url": "https://files.pythonhosted.org/packages/30/6b/055b7806f320cc8f2cdf23c5f70221c0dc1683fca9ffaf76dfc2ad4b91b6/opencc_python_reimplemented-0.1.7-py2.py3-none-any.whl",
+    "sha256": "41b3b92943c7bed291f448e9c7fad4b577c8c2eae30fcfe5a74edf8818493aa6",
+    "mode": "s2t"
   }
 }

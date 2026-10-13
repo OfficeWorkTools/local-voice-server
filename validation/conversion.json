@@ -1,0 +1,10 @@
+{
+  "mode": "s2t",
+  "cases": {
+    "甚至出现交易几乎停滞的情况": "甚至出現交易幾乎停滯的情況",
+    "放进你的 training 里面": "放進你的 training 裏面",
+    "": "",
+    "English training 123\n": "English training 123\n"
+  },
+  "passed": true
+}

@@ -1,0 +1,7 @@
+{
+  "upstream_sha256": "a1a9fd436c5bcb0e5498d4a3c0dfa875fae05c8bc2feb2e0367ce349ac43d04b",
+  "patched_sha256": "62d21d37f7be53de7ac106c2296437296ca972b69bd41c1e2c2b5be351be7f96",
+  "conversion_module_sha256": "30f1b39f68288dbd68c9aadae6b4ceb596113d54c62edd07bfde064d8ac84851",
+  "opencc_wheel_sha256": "41b3b92943c7bed291f448e9c7fad4b577c8c2eae30fcfe5a74edf8818493aa6",
+  "mode": "s2t"
+}

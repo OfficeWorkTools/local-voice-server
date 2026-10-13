@@ -1,5 +1,5 @@
 name: sensevoice-fp32
-description: Official SenseVoiceSmall, native FunASR CPU FP32
+description: Official SenseVoiceSmall CPU FP32, Traditional Chinese via OpenCC s2t
 backend: funasr
 f16: false
 known_usecases:

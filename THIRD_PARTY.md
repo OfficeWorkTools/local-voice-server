@@ -5,6 +5,8 @@
 - [LocalAI v4.11.0](https://github.com/mudler/LocalAI/tree/v4.11.0)：主程式與原生 CPU FunASR 後端來源。
 - [FunASR](https://github.com/modelscope/FunASR)：辨識及 FSMN VAD。
 - [FunAudioLLM/SenseVoiceSmall](https://huggingface.co/FunAudioLLM/SenseVoiceSmall)：官方權重；固定版本見 `config/versions.json`，下載的上游 README 保留於模型目錄。
+- [funasr/paraformer-zh](https://huggingface.co/funasr/paraformer-zh)：官方第二個模型 profile，同樣下載並校驗固定 revision。
+- [opencc-python-reimplemented](https://pypi.org/project/opencc-python-reimplemented/0.1.7/)：OpenCC s2t 字詞轉換，固定 wheel 及 SHA256，套件不隨此 repo 散布。
 - [PyTorch](https://pytorch.org/)：後端套件內的 CPU 推論引擎。
 - [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR)：官方中文測試音訊。
 - [ky552/ML2021_ASR_ST](https://huggingface.co/datasets/ky552/ML2021_ASR_ST)：公開 test 第 1279 列中英混用音訊與參考文字。依據資料集自己的授權使用。

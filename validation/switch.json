@@ -1,0 +1,50 @@
+{
+  "port": 8767,
+  "states": [
+    {
+      "selected": "paraformer-zh",
+      "resident": [
+        "paraformer-zh"
+      ],
+      "verification": {
+        "model": "paraformer-zh",
+        "source_model": "funasr/paraformer-zh",
+        "revision": "d7811ee3ac581fbcfdeb37c98c6ba674028433dc",
+        "model_class": "Paraformer",
+        "model_directory": "Paraformer-zh-official",
+        "model_sha256": "5bba782a5e9196166233b9ab12ba04cadff9ef9212b4ff6153ed9290ff679025",
+        "parameter_dtypes": {
+          "torch.float32": 956
+        },
+        "device": "cpu",
+        "torch": "2.14.1+cpu",
+        "native_backend_load_passed": true,
+        "deployed_config_verified": true,
+        "vad_files_verified": true
+      }
+    },
+    {
+      "selected": "sensevoice-fp32",
+      "resident": [
+        "sensevoice-fp32"
+      ],
+      "verification": {
+        "model": "sensevoice-fp32",
+        "source_model": "FunAudioLLM/SenseVoiceSmall",
+        "revision": "3847d57b6bdf2dd8875cb1508d2af43d80a16bf7",
+        "model_class": "SenseVoiceSmall",
+        "model_directory": "SenseVoiceSmall-official",
+        "model_sha256": "833ca2dcfdf8ec91bd4f31cfac36d6124e0c459074d5e909aec9cabe6204a3ea",
+        "parameter_dtypes": {
+          "torch.float32": 917
+        },
+        "device": "cpu",
+        "torch": "2.14.1+cpu",
+        "native_backend_load_passed": true,
+        "deployed_config_verified": true,
+        "vad_files_verified": true
+      }
+    }
+  ],
+  "restored_default": true
+}

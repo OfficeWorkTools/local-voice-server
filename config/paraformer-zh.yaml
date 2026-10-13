@@ -1,0 +1,8 @@
+name: paraformer-zh
+description: Official Paraformer-zh CPU float32, Traditional Chinese via OpenCC s2t
+backend: funasr
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: Paraformer-zh-official
