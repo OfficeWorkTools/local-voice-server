@@ -1,0 +1,72 @@
+{
+  "model": "breeze-asr-26-cpu",
+  "engine_class": "Whisper",
+  "wrapper_class": "WhisperModel",
+  "device": "cpu",
+  "compute_type": "int8_float32",
+  "source_model": "MediaTek-Research/Breeze-ASR-26",
+  "revision": "7b992682e7f5ceedd0a41ebec240f01ba469d19e",
+  "native_backend_load_passed": true,
+  "source_files_sha256": {
+    "README.md": "cd6e9b99b4572c20b291ae22c61800b1acd98e499cef1e57861c666b1883c8a6",
+    "config.json": "a09eba19e94cc98b5f21525169741eae3ec185ce87fe19e0a2cead149e87b9ab",
+    "generation_config.json": "7847d293b436a6d190000b643e653a9f5527cae162988253103436fda9004d3e",
+    "merges.txt": "2df2990a395e35e8dfbc7511e08c12d56018d8d04691e0133e5d63b21e154dc6",
+    "model-00001-of-00002.safetensors": "78e177c9a5228eed20f1f33485f8288bda5308a077fa7758281088c2a3100535",
+    "model-00002-of-00002.safetensors": "9c1f45081c3a2a606a1dc75e02653770956279d2942015587cf4880879952a7e",
+    "model.safetensors.index.json": "556ac171889470ee4de884153fcd535cba7809bb05122c75e4c5bbb19646ea66",
+    "normalizer.json": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd",
+    "preprocessor_config.json": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "special_tokens_map.json": "e67ae3a0aaa99abcd9f187138e12db1f65c16a14761c50ef10eef2c174a7a691",
+    "tokenizer_config.json": "21a4fc0483c14b87f4e0bbc177a9a357479bfa7c95aaf21ad53d71e9c5afafb9",
+    "vocab.json": "50d6a919f0a0601d56a04eb583c780d18553aa388254ba3158eb6a00f13e2c1a"
+  },
+  "converted_files_sha256": {
+    "config.json": "d86b7a7664a12559d644aa210a32ce9a7e03913e794b7ea4fb7182de69e273a7",
+    "model.bin": "4bfa6c4e484704186ae0717ac1129dd0c15e4571ecb83f83b764086428c35f2b",
+    "preprocessor_config.json": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "tokenizer.json": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3",
+    "vocabulary.json": "5ad28279db5e546349708b9a74736e2c018737ac5a600f1048f1f26c99b85b47"
+  },
+  "packages": {
+    "av": "19.0.1",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.2",
+    "ctranslate2": "4.8.3",
+    "faster-whisper": "1.2.1",
+    "filelock": "3.32.3",
+    "flatbuffers": "25.12.19",
+    "fsspec": "2026.7.0",
+    "grpcio": "1.71.0",
+    "hf-xet": "1.7.0",
+    "huggingface_hub": "0.36.2",
+    "idna": "3.20",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.31.0",
+    "packaging": "26.3",
+    "protobuf": "7.36.2",
+    "PyYAML": "6.0.3",
+    "regex": "2026.9.29",
+    "requests": "2.34.2",
+    "safetensors": "0.8.0",
+    "setuptools": "78.1.0",
+    "sympy": "1.14.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0+cpu",
+    "tqdm": "4.70.1",
+    "transformers": "4.57.6",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.8.0"
+  },
+  "backend_sha256": "6c80820bbacbbb77b89440ae7f00bcc0b3204b90d608cbbf40a589caf49b2dd5",
+  "transcripts": [
+    {
+      "sample": "taigi.wav",
+      "text": "唉 妳是在煩惱什麼啦 我想要教孩子臺語 但是要怎麼打字啦"
+    }
+  ]
+}

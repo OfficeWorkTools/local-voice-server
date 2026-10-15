@@ -1,0 +1,52 @@
+{
+  "model": "fireredasr2-aed-cpu",
+  "port": 8767,
+  "passed": true,
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 16.082,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 3.412,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "auto",
+      "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country",
+      "seconds": 9.056,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": null,
+      "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country",
+      "seconds": 9.131,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "text": "放進你的圈子裏面",
+      "seconds": 2.007,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "text": "放進你的圈子裏面",
+      "seconds": 1.922,
+      "segments_consistent": true
+    }
+  ],
+  "config_sha256": "07c78f3548e48a4e543e896ba23cfd4194720fc8fc4982ed43067416bf67a0e9",
+  "backend_sha256": "bdcce26561603ec3b9a135b424c19888a9fde98145e2e8b9e8706ae5cb22b806",
+  "limits": "Short CPU API integration checks, not user microphone accuracy or streaming latency."
+}

@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "fireredasr2-aed-cpu",
+        "object": "model"
+      },
+      {
+        "id": "sensevoice-fp32",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3",
+        "object": "model"
+      },
+      {
+        "id": "fun-asr-nano-2512-hf-cpu",
+        "object": "model"
+      },
+      {
+        "id": "paraformer-zh",
+        "object": "model"
+      },
+      {
+        "id": "qwen3-asr-0.6b-cpu",
+        "object": "model"
+      },
+      {
+        "id": "qwen3-asr-1.7b-cpu",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3-turbo",
+        "object": "model"
+      }
+    ]
+  },
+  "startup_preload_setting": "sensevoice-fp32",
+  "service": {
+    "active": "active",
+    "enabled": "enabled"
+  },
+  "sequence": [
+    {
+      "model": "sensevoice-fp32",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 10.632,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "sensevoice-fp32",
+          "backend": "funasr"
+        }
+      ]
+    },
+    {
+      "model": "whisper-large-v3-turbo",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 7.5,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "whisper-large-v3-turbo",
+          "backend": "faster-whisper"
+        }
+      ]
+    },
+    {
+      "model": "qwen3-asr-0.6b-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 5.54,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "qwen3-asr-0.6b-cpu",
+          "backend": "modern-asr"
+        }
+      ]
+    },
+    {
+      "model": "fun-asr-nano-2512-hf-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "auto",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 7.488,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "fun-asr-nano-2512-hf-cpu",
+          "backend": "nano-hf"
+        }
+      ]
+    }
+  ],
+  "final_loaded": "fun-asr-nano-2512-hf-cpu",
+  "limits": "Service restart and short API clips; no OS reboot or user microphone test."
+}

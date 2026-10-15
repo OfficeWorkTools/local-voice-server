@@ -1,0 +1,9 @@
+name: qwen3-asr-0.6b-cpu
+description: CPU-only Q8_0 weights, Traditional Chinese via OpenCC s2t; Qwen3-ASR native audio.cpp
+backend: modern-asr
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: ModernCPU/qwen3-asr-0.6b-q8_0.gguf

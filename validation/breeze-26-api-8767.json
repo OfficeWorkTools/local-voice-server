@@ -1,0 +1,31 @@
+{
+  "model": "breeze-asr-26-cpu",
+  "port": 8767,
+  "passed": true,
+  "results": [
+    {
+      "sample": "taigi.wav",
+      "language": "zh",
+      "text": "唉 妳是在煩惱什麼啦 我想要教孩子臺語 但是要怎麼打字啦",
+      "seconds": 11.06,
+      "segments_consistent": true
+    },
+    {
+      "sample": "taigi.wav",
+      "language": "auto",
+      "text": " 唉 妳是在煩惱什麼啦 我想要教孩子臺語 但是要怎麼打字啦",
+      "seconds": 11.578,
+      "segments_consistent": true
+    },
+    {
+      "sample": "taigi.wav",
+      "language": null,
+      "text": " 唉 妳是在煩惱什麼啦 我想要教孩子臺語 但是要怎麼打字啦",
+      "seconds": 12.905,
+      "segments_consistent": true
+    }
+  ],
+  "config_sha256": "e5d43af3987b446f408c7acc08ed5828859385c91d7f20f104a9ace2c0910b7a",
+  "backend_sha256": "6c80820bbacbbb77b89440ae7f00bcc0b3204b90d608cbbf40a589caf49b2dd5",
+  "limits": "Short functional tests only; Breeze 26 uses an eight-second Taigi excerpt, no accuracy benchmark."
+}

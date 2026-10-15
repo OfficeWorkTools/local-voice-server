@@ -1,0 +1,9 @@
+name: fun-asr-nano-2512-hf-cpu
+description: Official Fun-ASR-Nano-2512-hf, native Transformers CPU FP32; OpenCC s2t; text only, recordings up to 60 seconds
+backend: nano-hf
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: Fun-ASR-Nano-2512-hf

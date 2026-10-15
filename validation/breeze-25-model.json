@@ -1,0 +1,79 @@
+{
+  "model": "breeze-asr-25-cpu",
+  "engine_class": "Whisper",
+  "wrapper_class": "WhisperModel",
+  "device": "cpu",
+  "compute_type": "int8_float32",
+  "source_model": "MediaTek-Research/Breeze-ASR-25",
+  "revision": "cffe7ccb404d025296a00758d0a33468bec3a9d0",
+  "native_backend_load_passed": true,
+  "source_files_sha256": {
+    "README.md": "a724bfb427e2475086b7a40dd9be3403be063d98eda4b5c8ae6c97a18b77f5a2",
+    "config.json": "152f13a1b4535d16edd05a9168553a967e2b42d07feee59b136f0ab14e522aab",
+    "generation_config.json": "8cd24239c76189ae8125d09f92bf883d7d7aa0893039462b0413ee19a088c1cc",
+    "merges.txt": "2df2990a395e35e8dfbc7511e08c12d56018d8d04691e0133e5d63b21e154dc6",
+    "model.safetensors": "c5d952b3bc03ea277209aff0ef5b5c4c055d74449ff794c02d8f4e315fdef6b6",
+    "normalizer.json": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd",
+    "preprocessor_config.json": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "special_tokens_map.json": "e67ae3a0aaa99abcd9f187138e12db1f65c16a14761c50ef10eef2c174a7a691",
+    "tokenizer.json": "ad9d585ff6f7948ae7687f0fbcccf52c9e0ab8105729e542e47a11e2e5f05071",
+    "tokenizer_config.json": "4a5b5d589336cefaef5fd27995c030a42d7fab3de5ac19b6c6fa0afbcbcc4309",
+    "vocab.json": "8f680bba319e01a653d2e8a5dbc17a9157179e0576e6ce74ce0c06356c6e24f9"
+  },
+  "converted_files_sha256": {
+    "config.json": "d86b7a7664a12559d644aa210a32ce9a7e03913e794b7ea4fb7182de69e273a7",
+    "model.bin": "2717d6523ece56561eac975d080e3d8d9e42dfb857de77f4c4a9c26069e48fce",
+    "preprocessor_config.json": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "tokenizer.json": "ad9d585ff6f7948ae7687f0fbcccf52c9e0ab8105729e542e47a11e2e5f05071",
+    "vocabulary.json": "5ad28279db5e546349708b9a74736e2c018737ac5a600f1048f1f26c99b85b47"
+  },
+  "packages": {
+    "av": "19.0.1",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.2",
+    "ctranslate2": "4.8.3",
+    "faster-whisper": "1.2.1",
+    "filelock": "3.32.3",
+    "flatbuffers": "25.12.19",
+    "fsspec": "2026.7.0",
+    "grpcio": "1.71.0",
+    "hf-xet": "1.7.0",
+    "huggingface_hub": "0.36.2",
+    "idna": "3.20",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.31.0",
+    "packaging": "26.3",
+    "protobuf": "7.36.2",
+    "PyYAML": "6.0.3",
+    "regex": "2026.9.29",
+    "requests": "2.34.2",
+    "safetensors": "0.8.0",
+    "setuptools": "78.1.0",
+    "sympy": "1.14.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0+cpu",
+    "tqdm": "4.70.1",
+    "transformers": "4.57.6",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.8.0"
+  },
+  "backend_sha256": "6c80820bbacbbb77b89440ae7f00bcc0b3204b90d608cbbf40a589caf49b2dd5",
+  "transcripts": [
+    {
+      "sample": "chinese.wav",
+      "text": "甚至出現交易幾乎停止的情況"
+    },
+    {
+      "sample": "english.wav",
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "sample": "mixed.wav",
+      "text": "放進你的 training 裡面"
+    }
+  ]
+}

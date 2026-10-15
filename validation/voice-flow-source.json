@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-15",
+  "scope": "Installed VocaLinux Remote API source and disk settings; not live process memory",
+  "source_files": {
+    "audio/capture.py": "f90546e623c60e53b138f6da45ce16b226726eef5ea77543188655769407c1ca",
+    "speech_recognition/recognition_manager.py": "5eba2c5334ccd630f3d3c822591054d6083cd7833457a05ef804c0d04cee64a2",
+    "custom_dictionary.py": "7ecdde0efdff7191433443d521f144b10f6f164107fc802df83b5deccf75f429",
+    "main.py": "8da0d6f189a9a16f76a8220c811395a8618521acf08ea28d3fcea16f004e811c",
+    "post_processor.py": "2fb65c79b3ea32b3f6191e87c53664cfba15c570850e3bfe456649f7d5e3db3c",
+    "text_injection/text_injector.py": "62a589782c82477dfa839067ea9a5e79c3f65e23c7c81edfc5d0990321371299"
+  },
+  "settings_snapshot": {
+    "engine": "remote_api",
+    "language": "auto",
+    "external_script_configured": false,
+    "dictionary_terms_prompt_enabled": false,
+    "correction_rules_found": false,
+    "voice_commands_effective": false,
+    "append_trailing_space": true
+  },
+  "source_locations": {
+    "capture_format": "audio/capture.py:870",
+    "wav_request": "speech_recognition/recognition_manager.py:2189",
+    "http_timeout": "speech_recognition/recognition_manager.py:2274",
+    "response_text": "speech_recognition/recognition_manager.py:2300",
+    "corrections_and_commands": "speech_recognition/recognition_manager.py:3729",
+    "external_script": "main.py:1021",
+    "text_injection": "text_injection/text_injector.py:1599"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "qwen3-asr-0.6b-cpu",
+        "object": "model"
+      },
+      {
+        "id": "qwen3-asr-1.7b-cpu",
+        "object": "model"
+      },
+      {
+        "id": "sensevoice-onnx-cpu",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3-turbo",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3",
+        "object": "model"
+      },
+      {
+        "id": "breeze-asr-26-cpu",
+        "object": "model"
+      },
+      {
+        "id": "fun-asr-nano-2512-hf-cpu",
+        "object": "model"
+      },
+      {
+        "id": "paraformer-zh",
+        "object": "model"
+      },
+      {
+        "id": "sensevoice-fp32",
+        "object": "model"
+      },
+      {
+        "id": "breeze-asr-25-cpu",
+        "object": "model"
+      },
+      {
+        "id": "fireredasr2-aed-cpu",
+        "object": "model"
+      }
+    ]
+  },
+  "sequence": [
+    {
+      "model": "breeze-asr-25-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停止的情況",
+        "seconds": 10.43,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "breeze-asr-25-cpu",
+          "backend": "breeze-cpu"
+        }
+      ]
+    },
+    {
+      "model": "breeze-asr-26-cpu",
+      "transcription": {
+        "sample": "taigi.wav",
+        "language": "zh",
+        "text": "唉 妳是在煩惱什麼啦 我想要教孩子臺語 但是要怎麼打字啦",
+        "seconds": 12.03,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "breeze-asr-26-cpu",
+          "backend": "breeze-cpu"
+        }
+      ]
+    },
+    {
+      "model": "qwen3-asr-0.6b-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 5.716,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "qwen3-asr-0.6b-cpu",
+          "backend": "modern-asr"
+        }
+      ]
+    },
+    {
+      "model": "qwen3-asr-1.7b-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 7.718,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "qwen3-asr-1.7b-cpu",
+          "backend": "modern-asr"
+        }
+      ]
+    },
+    {
+      "model": "fireredasr2-aed-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "auto",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 18.12,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "fireredasr2-aed-cpu",
+          "backend": "modern-asr"
+        }
+      ]
+    },
+    {
+      "model": "sensevoice-onnx-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 5.791,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "sensevoice-onnx-cpu",
+          "backend": "modern-asr"
+        }
+      ]
+    },
+    {
+      "model": "fun-asr-nano-2512-hf-cpu",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況。",
+        "seconds": 8.274,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "fun-asr-nano-2512-hf-cpu",
+          "backend": "nano-hf"
+        }
+      ]
+    },
+    {
+      "model": "sensevoice-fp32",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 11.195,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "sensevoice-fp32",
+          "backend": "funasr"
+        }
+      ]
+    }
+  ],
+  "service": {
+    "active": "active",
+    "enabled": "enabled"
+  },
+  "final_loaded": "sensevoice-fp32",
+  "startup_preload_setting": "sensevoice-fp32",
+  "limits": "Fixed short samples and service restart; not user microphone or OS reboot."
+}

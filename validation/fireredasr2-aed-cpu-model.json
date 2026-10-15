@@ -1,0 +1,49 @@
+{
+  "model": "fireredasr2-aed-cpu",
+  "engine": "firered",
+  "device": "cpu",
+  "precision": "float32",
+  "engine_class": "FireRedAsrAed",
+  "parameter_devices": [
+    "cpu"
+  ],
+  "parameter_dtypes": [
+    "torch.float32"
+  ],
+  "source_model": "FireRedTeam/FireRedASR2-AED",
+  "revision": "2304afed56eacfee6256dee5937ed22ffa0b64ec",
+  "files_verified": true,
+  "files_sha256": {
+    "README.md": "53fedc7d3cb8ae87845862d4d5fb94ba32a4f320cbe46393c93b05dd3d1c2e22",
+    "cmvn.ark": "6efba6105429d1630c05d818d956bfe4edfad37a04b3b27bb5a029b9adb37945",
+    "dict.txt": "1bc613de2112d257e61a349c3e72d1b1a9cf19c33d3ca954197ad2171e5ea07b",
+    "train_bpe1000.model": "473bbc157cb4eade2059b30a3c877a1c29bd50cadbfbed869ae36eeade7fee07",
+    "model.pth.tar": "4677cbd30988d63ed3e777f6a42a1e5260a3865317f6e15e488bef40954f7054"
+  },
+  "native_backend_load_passed": true,
+  "backend_sha256": "bdcce26561603ec3b9a135b424c19888a9fde98145e2e8b9e8706ae5cb22b806",
+  "transcripts": [
+    {
+      "sample": "chinese.wav",
+      "text": "甚至出現交易幾乎停滯的情況"
+    },
+    {
+      "sample": "english.wav",
+      "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country"
+    },
+    {
+      "sample": "mixed.wav",
+      "text": "放進你的圈子裏面"
+    }
+  ],
+  "base_packages": {
+    "torch": "2.14.1+cpu",
+    "torchaudio": "2.11.0+cpu",
+    "transformers": "4.57.6",
+    "grpcio": "1.71.0",
+    "protobuf": "7.36.2",
+    "numpy": "2.5.3",
+    "sentencepiece": "0.2.2",
+    "kaldiio": "2.18.1"
+  }
+}

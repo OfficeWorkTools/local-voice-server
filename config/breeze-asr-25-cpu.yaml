@@ -1,0 +1,9 @@
+name: breeze-asr-25-cpu
+description: MediaTek Breeze ASR 25, Taiwanese Mandarin and Chinese-English; CPU INT8 conversion of official weights; OpenCC s2t
+backend: breeze-cpu
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: Breeze-ASR-25-ct2-int8

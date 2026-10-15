@@ -1,0 +1,94 @@
+{
+  "model": "breeze-asr-25-cpu",
+  "port": 8767,
+  "passed": true,
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "zh",
+      "text": "甚至出現交易幾乎停止的情況",
+      "seconds": 10.562,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "en",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 6.23,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "text": "甚至出現交易幾乎停止的情況",
+      "seconds": 11.202,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "text": "甚至出現交易幾乎停止的情況",
+      "seconds": 10.956,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "zh",
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 7.217,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "en",
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 7.072,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "auto",
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 14.01,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": null,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 13.558,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "zh",
+      "text": "放進你的 training 裡面",
+      "seconds": 5.886,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "en",
+      "text": "放進你的 training 裡面",
+      "seconds": 5.645,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "text": "放進你的 training 裡面",
+      "seconds": 10.112,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "text": "放進你的 training 裡面",
+      "seconds": 10.104,
+      "segments_consistent": true
+    }
+  ],
+  "config_sha256": "f19b728152e7f8974c04a9aff368024f6775495ce47f9e13441b19f6912004f3",
+  "backend_sha256": "6c80820bbacbbb77b89440ae7f00bcc0b3204b90d608cbbf40a589caf49b2dd5",
+  "limits": "Short functional tests only; Breeze 26 uses an eight-second Taigi excerpt, no accuracy benchmark."
+}

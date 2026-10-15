@@ -1,4 +1,4 @@
-"""Verify the selected FunASR profile or an explicit Whisper backend profile."""
+"""Verify the selected FunASR profile or an explicit Whisper/CPU ASR profile."""
 import collections
 import hashlib
 import json
@@ -6,12 +6,24 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if len(sys.argv) == 2 and sys.argv[1] in json.loads((ROOT / 'config/versions.json').read_text()).get('breeze_cpu', {}).get('profiles', {}):
+    from verify_breeze_model import verify
+    verify(sys.argv[1])
+    sys.exit(0)
+if sys.argv[1:] == ['fun-asr-nano-2512-hf-cpu']:
+    from verify_nano_hf_model import verify
+    verify()
+    sys.exit(0)
+if len(sys.argv) == 2 and sys.argv[1] in json.loads((ROOT / 'config/versions.json').read_text()).get('modern_cpu_asr', {}).get('profiles', {}):
+    from verify_cpu_model import verify
+    verify(sys.argv[1])
+    sys.exit(0)
 if len(sys.argv) == 2 and sys.argv[1] in ("whisper-large-v3", "whisper-large-v3-turbo"):
     from verify_whisper_model import verify
     verify(sys.argv[1])
     sys.exit(0)
 if sys.argv[1:]:
-    raise SystemExit("Supported optional arguments: whisper-large-v3, whisper-large-v3-turbo")
+    raise SystemExit("Use a configured CPU ASR model ID, whisper-large-v3 or whisper-large-v3-turbo")
 STATE = ROOT / ".localai"
 BACKEND = STATE / "backends/cpu-funasr"
 sys.path.insert(0, str(BACKEND))

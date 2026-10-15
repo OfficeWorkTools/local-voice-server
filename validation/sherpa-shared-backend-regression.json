@@ -1,0 +1,387 @@
+{
+  "qwen3-asr-0.6b-cpu": {
+    "native": {
+      "model": "qwen3-asr-0.6b-cpu",
+      "engine": "audio-cpp",
+      "device": "cpu",
+      "precision": "Q8_0 weights",
+      "engine_class": "audio.cpp/qwen3_asr",
+      "options": [
+        "family:qwen3_asr",
+        "task:asr",
+        "backend:cpu",
+        "threads:8"
+      ],
+      "source_model": "audio-cpp/audio.cpp-gguf",
+      "revision": "f861648c0c1f4da9f18e9a0ce5e217b0679bb2f5",
+      "files_verified": true,
+      "files_sha256": {
+        "Qwen3-ASR-0.6B-GGUF/qwen3-asr-0.6b-q8_0.gguf": "6c44ec2fb4cee513892d7863c1fcc3ea6b699ffa4d899b0ef4ab19956d9544f7"
+      },
+      "native_backend_load_passed": true,
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "transcripts": [
+        {
+          "sample": "chinese.wav",
+          "text": "甚至出現交易幾乎停滯的情況。"
+        },
+        {
+          "sample": "english.wav",
+          "text": "And so, my fellow Americans, ask not what your country can do for you; ask what you can do for your country."
+        },
+        {
+          "sample": "mixed.wav",
+          "text": "放進你的圈子裏面。"
+        }
+      ],
+      "base_packages": {
+        "torch": "2.14.1+cpu",
+        "torchaudio": "2.11.0+cpu",
+        "transformers": "4.57.6",
+        "grpcio": "1.71.0",
+        "protobuf": "7.36.2",
+        "numpy": "2.5.3",
+        "sentencepiece": "0.2.2",
+        "kaldiio": "2.18.1"
+      }
+    },
+    "staging_api": {
+      "model": "qwen3-asr-0.6b-cpu",
+      "port": 8768,
+      "passed": true,
+      "results": [
+        {
+          "sample": "chinese.wav",
+          "language": "zh",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 6.004,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": "en",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 0.889,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": "auto",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 1.941,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": null,
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 1.869,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "zh",
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+          "seconds": 4.111,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "en",
+          "text": "And so, my fellow Americans, ask not what your country can do for you; ask what you can do for your country.",
+          "seconds": 3.872,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "auto",
+          "text": "And so, my fellow Americans, ask not what your country can do for you; ask what you can do for your country.",
+          "seconds": 4.097,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": null,
+          "text": "And so, my fellow Americans, ask not what your country can do for you; ask what you can do for your country.",
+          "seconds": 4.475,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "zh",
+          "text": "放進你的圈子裏面。",
+          "seconds": 0.89,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "en",
+          "text": "放進你的羣裏裏面。",
+          "seconds": 0.903,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "auto",
+          "text": "放進你的圈子裏面。",
+          "seconds": 1.24,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": null,
+          "text": "放進你的圈子裏面。",
+          "seconds": 1.091,
+          "segments_consistent": true
+        }
+      ],
+      "config_sha256": "95ce04b20cdef527d348f1b952dd8558200204780ce237a65717bcbe00a15070",
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "limits": "Short CPU API integration checks, not user microphone accuracy or streaming latency."
+    }
+  },
+  "qwen3-asr-1.7b-cpu": {
+    "native": {
+      "model": "qwen3-asr-1.7b-cpu",
+      "engine": "audio-cpp",
+      "device": "cpu",
+      "precision": "Q8_0 weights",
+      "engine_class": "audio.cpp/qwen3_asr",
+      "options": [
+        "family:qwen3_asr",
+        "task:asr",
+        "backend:cpu",
+        "threads:8"
+      ],
+      "source_model": "audio-cpp/audio.cpp-gguf",
+      "revision": "f861648c0c1f4da9f18e9a0ce5e217b0679bb2f5",
+      "files_verified": true,
+      "files_sha256": {
+        "Qwen3-ASR-1.7B-GGUF/qwen3-asr-1.7b-q8_0.gguf": "da4fc2ac7f24dee784d1684eb1f35836cdbf559519452ae11777670734c0a4f8"
+      },
+      "native_backend_load_passed": true,
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "transcripts": [
+        {
+          "sample": "chinese.wav",
+          "text": "甚至出現交易幾乎停滯的情況。"
+        },
+        {
+          "sample": "english.wav",
+          "text": "And so, my fellow Americans, ask not what your country can do for you. Ask what you can do for your country."
+        },
+        {
+          "sample": "mixed.wav",
+          "text": "放進你的training裏面。"
+        }
+      ],
+      "base_packages": {
+        "torch": "2.14.1+cpu",
+        "torchaudio": "2.11.0+cpu",
+        "transformers": "4.57.6",
+        "grpcio": "1.71.0",
+        "protobuf": "7.36.2",
+        "numpy": "2.5.3",
+        "sentencepiece": "0.2.2",
+        "kaldiio": "2.18.1"
+      }
+    },
+    "staging_api": {
+      "model": "qwen3-asr-1.7b-cpu",
+      "port": 8768,
+      "passed": true,
+      "results": [
+        {
+          "sample": "chinese.wav",
+          "language": "zh",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 10.648,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": "en",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 1.748,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": "auto",
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 2.343,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": null,
+          "text": "甚至出現交易幾乎停滯的情況。",
+          "seconds": 2.186,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "zh",
+          "text": "And so, my fellow Americans, ask not what your country can do for you. Ask what you can do for your country.",
+          "seconds": 5.546,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "en",
+          "text": "And so, my fellow Americans, ask not what your country can do for you. Ask what you can do for your country.",
+          "seconds": 5.301,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "auto",
+          "text": "And so, my fellow Americans, ask not what your country can do for you. Ask what you can do for your country.",
+          "seconds": 5.415,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": null,
+          "text": "And so, my fellow Americans, ask not what your country can do for you. Ask what you can do for your country.",
+          "seconds": 5.44,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "zh",
+          "text": "放進你的training裏面。",
+          "seconds": 1.101,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "en",
+          "text": "放進你的 training 裏面。",
+          "seconds": 1.136,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "auto",
+          "text": "放進你的training裏面。",
+          "seconds": 1.746,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": null,
+          "text": "放進你的training裏面。",
+          "seconds": 1.606,
+          "segments_consistent": true
+        }
+      ],
+      "config_sha256": "65f22e48189c6b9b8dc31beca2d44ba3b9484496cb292a22a7a062801d7cc4c1",
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "limits": "Short CPU API integration checks, not user microphone accuracy or streaming latency."
+    }
+  },
+  "fireredasr2-aed-cpu": {
+    "native": {
+      "model": "fireredasr2-aed-cpu",
+      "engine": "firered",
+      "device": "cpu",
+      "precision": "float32",
+      "engine_class": "FireRedAsrAed",
+      "parameter_devices": [
+        "cpu"
+      ],
+      "parameter_dtypes": [
+        "torch.float32"
+      ],
+      "source_model": "FireRedTeam/FireRedASR2-AED",
+      "revision": "2304afed56eacfee6256dee5937ed22ffa0b64ec",
+      "files_verified": true,
+      "files_sha256": {
+        "README.md": "53fedc7d3cb8ae87845862d4d5fb94ba32a4f320cbe46393c93b05dd3d1c2e22",
+        "cmvn.ark": "6efba6105429d1630c05d818d956bfe4edfad37a04b3b27bb5a029b9adb37945",
+        "dict.txt": "1bc613de2112d257e61a349c3e72d1b1a9cf19c33d3ca954197ad2171e5ea07b",
+        "train_bpe1000.model": "473bbc157cb4eade2059b30a3c877a1c29bd50cadbfbed869ae36eeade7fee07",
+        "model.pth.tar": "4677cbd30988d63ed3e777f6a42a1e5260a3865317f6e15e488bef40954f7054"
+      },
+      "native_backend_load_passed": true,
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "transcripts": [
+        {
+          "sample": "chinese.wav",
+          "text": "甚至出現交易幾乎停滯的情況"
+        },
+        {
+          "sample": "english.wav",
+          "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country"
+        },
+        {
+          "sample": "mixed.wav",
+          "text": "放進你的圈子裏面"
+        }
+      ],
+      "base_packages": {
+        "torch": "2.14.1+cpu",
+        "torchaudio": "2.11.0+cpu",
+        "transformers": "4.57.6",
+        "grpcio": "1.71.0",
+        "protobuf": "7.36.2",
+        "numpy": "2.5.3",
+        "sentencepiece": "0.2.2",
+        "kaldiio": "2.18.1"
+      }
+    },
+    "staging_api": {
+      "model": "fireredasr2-aed-cpu",
+      "port": 8768,
+      "passed": true,
+      "results": [
+        {
+          "sample": "chinese.wav",
+          "language": "auto",
+          "text": "甚至出現交易幾乎停滯的情況",
+          "seconds": 18.443,
+          "segments_consistent": true
+        },
+        {
+          "sample": "chinese.wav",
+          "language": null,
+          "text": "甚至出現交易幾乎停滯的情況",
+          "seconds": 3.434,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": "auto",
+          "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country",
+          "seconds": 9.525,
+          "segments_consistent": true
+        },
+        {
+          "sample": "english.wav",
+          "language": null,
+          "text": "and so my fellow americans ask not what your country can do for you ask what you can do for your country",
+          "seconds": 9.299,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": "auto",
+          "text": "放進你的圈子裏面",
+          "seconds": 1.908,
+          "segments_consistent": true
+        },
+        {
+          "sample": "mixed.wav",
+          "language": null,
+          "text": "放進你的圈子裏面",
+          "seconds": 1.799,
+          "segments_consistent": true
+        }
+      ],
+      "config_sha256": "07c78f3548e48a4e543e896ba23cfd4194720fc8fc4982ed43067416bf67a0e9",
+      "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+      "limits": "Short CPU API integration checks, not user microphone accuracy or streaming latency."
+    }
+  }
+}

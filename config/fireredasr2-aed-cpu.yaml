@@ -1,0 +1,9 @@
+name: fireredasr2-aed-cpu
+description: CPU-only float32, Traditional Chinese via OpenCC s2t; automatic language only
+backend: modern-asr
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: FireRedASR2-AED

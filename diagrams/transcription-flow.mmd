@@ -1,0 +1,24 @@
+flowchart TD
+    A[使用者說話與停止錄音] --> B[Local Voice 擷取音訊及分段]
+    B --> C[封裝 16 kHz 單聲道 PCM16 WAV]
+    C --> D[送出 file、Model、Language 到 Local AI]
+    D --> E{請求模型已載入？}
+    E -->|是| G[gRPC 後端檢查輸入並對應語言參數]
+    E -->|否| F[卸載前一後端並載入指定模型]
+    F --> G
+    G --> H[指定引擎辨識：固定精度、VAD／解碼與 profile ITN]
+    H --> I[OpenCC s2t 轉繁體並組裝 text 與 segments]
+    I --> J[Local AI 回傳 JSON]
+    J --> K[Local Voice 取文字並清除標籤及非語音內容]
+    K --> L[依使用者設定套用固定替換與語音命令]
+    L --> M[整理空白與分段間距]
+    M --> N{有設定外部後處理腳本？}
+    N -->|有| O[將文字交給腳本；失敗則保留原文字]
+    N -->|沒有| P{有可回填文字？}
+    O --> P
+    P -->|有| Q[注入目前焦點應用程式]
+    P -->|沒有| R[跳過回填]
+    F -.載入失敗.-> X[回報錯誤；Local Voice 無有效結果則不回填]
+    G -.輸入不支援.-> X
+    H -.推論失敗.-> X
+    D -.連線失敗或逾時.-> X

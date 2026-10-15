@@ -1,0 +1,9 @@
+name: breeze-asr-26-cpu
+description: MediaTek Breeze ASR 26 Taigi, Taiwanese Hokkien to Mandarin Chinese characters; CPU INT8 conversion; OpenCC s2t
+backend: breeze-cpu
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: Breeze-ASR-26-ct2-int8

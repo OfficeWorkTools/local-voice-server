@@ -1,0 +1,9 @@
+name: sensevoice-onnx-cpu
+description: SenseVoiceSmall sherpa-onnx export, CPU FP32, ITN enabled, OpenCC s2t; separate from PyTorch sensevoice-fp32
+backend: modern-asr
+cuda: false
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: SenseVoiceSmall-sherpa-fp32

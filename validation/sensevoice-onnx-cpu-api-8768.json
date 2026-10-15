@@ -1,0 +1,94 @@
+{
+  "model": "sensevoice-onnx-cpu",
+  "port": 8768,
+  "passed": true,
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "zh",
+      "text": "甚至出現交易幾乎停滯的情況。",
+      "seconds": 4.382,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "en",
+      "text": "甚至出現交易幾乎停滯的情況。",
+      "seconds": 0.153,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "text": "甚至出現交易幾乎停滯的情況。",
+      "seconds": 0.208,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "text": "甚至出現交易幾乎停滯的情況。",
+      "seconds": 0.145,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "zh",
+      "text": "And so my fellow Americans ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.246,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "en",
+      "text": "And so my fellow Americans ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.235,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "auto",
+      "text": "And so my fellow Americans ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.224,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": null,
+      "text": "And so my fellow Americans ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.293,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "zh",
+      "text": "放進你的圈子裏面。",
+      "seconds": 0.108,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "en",
+      "text": "F進 the trend。",
+      "seconds": 0.13,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "text": "放進你的圈子裏面。",
+      "seconds": 0.123,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "text": "放進你的圈子裏面。",
+      "seconds": 0.125,
+      "segments_consistent": true
+    }
+  ],
+  "config_sha256": "2dfa2727030f7beacb482964ce00288f545bef6c82c20daa66003ad1dfe20bf6",
+  "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+  "limits": "Short CPU API integration checks, not user microphone accuracy or streaming latency."
+}

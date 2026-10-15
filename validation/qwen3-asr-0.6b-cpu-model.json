@@ -1,0 +1,45 @@
+{
+  "model": "qwen3-asr-0.6b-cpu",
+  "engine": "audio-cpp",
+  "device": "cpu",
+  "precision": "Q8_0 weights",
+  "engine_class": "audio.cpp/qwen3_asr",
+  "options": [
+    "family:qwen3_asr",
+    "task:asr",
+    "backend:cpu",
+    "threads:8"
+  ],
+  "source_model": "audio-cpp/audio.cpp-gguf",
+  "revision": "f861648c0c1f4da9f18e9a0ce5e217b0679bb2f5",
+  "files_verified": true,
+  "files_sha256": {
+    "Qwen3-ASR-0.6B-GGUF/qwen3-asr-0.6b-q8_0.gguf": "6c44ec2fb4cee513892d7863c1fcc3ea6b699ffa4d899b0ef4ab19956d9544f7"
+  },
+  "native_backend_load_passed": true,
+  "backend_sha256": "bdcce26561603ec3b9a135b424c19888a9fde98145e2e8b9e8706ae5cb22b806",
+  "transcripts": [
+    {
+      "sample": "chinese.wav",
+      "text": "甚至出現交易幾乎停滯的情況。"
+    },
+    {
+      "sample": "english.wav",
+      "text": "And so, my fellow Americans, ask not what your country can do for you; ask what you can do for your country."
+    },
+    {
+      "sample": "mixed.wav",
+      "text": "放進你的圈子裏面。"
+    }
+  ],
+  "base_packages": {
+    "torch": "2.14.1+cpu",
+    "torchaudio": "2.11.0+cpu",
+    "transformers": "4.57.6",
+    "grpcio": "1.71.0",
+    "protobuf": "7.36.2",
+    "numpy": "2.5.3",
+    "sentencepiece": "0.2.2",
+    "kaldiio": "2.18.1"
+  }
+}

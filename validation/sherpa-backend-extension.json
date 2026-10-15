@@ -1,0 +1,9 @@
+{
+  "backend_sha256": "6b5c64cb2cc1142b13177f005dfb8beae97aae68ff82a813b5c3d4d74b9d0101",
+  "launcher_sha256": "f5bf7b13e2ef0bbb0c2abee9d2b2f6043b1c8220fbe848d0425f556e15b1f3a4",
+  "conversion_sha256": "30f1b39f68288dbd68c9aadae6b4ceb596113d54c62edd07bfde064d8ac84851",
+  "audio_cpp_digest": "sha256:4135dc2ce663c72b8dec065c58dd409a8ae5a61b482b6cf100e698515cf1ee90",
+  "firered_source_sha256": "bfe474062f659b999b6147652347b472546d63a8fbdcc44888a14b7d71fa6639",
+  "fbank_wheel_sha256": "f16e74372fe9e20abb4183f98a8e2288d5ee4c48d04d94b6160311170e007661",
+  "cpu_only": true
+}
