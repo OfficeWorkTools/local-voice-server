@@ -33,3 +33,31 @@
 - 同埠關閉後的 TIME_WAIT 曾被探測誤判為占用；加入 SO_REUSEADDR 後，正式 8767 更新、重啟與往返切換通過，原 8766 服務持續運作。舊 LocalAI 檔案與單元保留但停用，防止重新開機搶同一埠。
 
 未測另一台電腦、斷網、重新開機、任意其他 backend、串流／字幕格式、長句及一般字錯率。新 profiles／繁體擴充並未增加 ITN、第二個 HTTP 埠、代理或 LLM 改寫。
+
+## Whisper GPU 安裝與切換驗證，2026-10-15
+
+完整 large-v3 已加入正式 8767。官方 LocalAI 原生 NVIDIA faster-whisper 後端、模型 revision、必要檔案 hash 與原始 backend.py hash 均固定在 config/versions.json 的 whisper 區段。先在 8768 驗證，再發布模型設定；準備與發布流程重跑通過，沒有改動 VocaLinux 設定。
+
+- 原生 BackendServicer.LoadModel 真實載入 WhisperModel／CTranslate2 Whisper，device=cuda、compute_type=float32；所有模型檔 hash 通過。實際封裝版本為 faster-whisper 1.2.1、CTranslate2 4.8.2、PyTorch 2.4.1。見 [validation/whisper-model.json](validation/whisper-model.json)。這是 FP32 推論證據，不是發布權重原始儲存精度的聲明。
+- 小補丁明確傳遞 en、zh、auto／省略語言，使用 PCM16 WAV 解碼並套用 OpenCC s2t。以真實 RPC 方法驗證語言欄位及 text／segments 繁體一致，補丁 hash 見 [validation/whisper-extension.json](validation/whisper-extension.json)。
+- 在獨立 8768 與正式 8767，各使用中文、純英文與中英夾雜音訊，測 zh、en、auto、省略 language，均回應非空 JSON；合適語言下的中文繁體及英文關鍵字通過。見 [validation/whisper-api.json](validation/whisper-api.json)。training 樣本仍誤辨，不能把功能驗證當成準確率通過。
+- 與先前比較測試相同的 30 段錄音，透過原生 LocalAI API 重播。忽略大小寫、空白、標點與繁簡差異後，30/30 與先前完整 Whisper 結果一致。這是部署輸出一致性，不是 30/30 辨識正確。見 [validation/whisper-native-parity.json](validation/whisper-native-parity.json)。
+- 正式 8767 完成 Whisper → SenseVoice → Whisper → SenseVoice 往返切換；每次 system endpoint 均只列一個常駐模型。見 [validation/whisper-switch.json](validation/whisper-switch.json)。
+- 正式服務重啟後再次驗證三個模型可列出、SenseVoice 暖機、Whisper 載入轉錄及換回 SenseVoice。見 [validation/whisper-restart.json](validation/whisper-restart.json)。SenseVoice 再次通過 CPU FP32、917 個參數張量與固定 VAD hash 驗證。
+- Installed GUI 顯示三個模型。8768 臨時實例已停止，開機預載與最終常駐均維持 SenseVoice；Whisper 可由 GUI Load 或 API model 載入。
+
+未測使用者麥克風／VocaLinux 完整聽寫、其他電腦、重新開機、FP16／INT8、長錄音或高負載。Whisper 仍可能把英文辨成中文；繁體轉換只改字形，不修正辨識內容。
+
+## Whisper large-v3-turbo 安裝與切換驗證，2026-10-15
+
+Turbo 已加入正式 8767，API Model 為 `whisper-large-v3-turbo`。它與完整版本共用已固定的原生 NVIDIA faster-whisper 後端及同一份補丁，權重、revision、模型目錄與驗證報告則分開。來源與檔案 SHA256 在 config/versions.json 的 whisper_turbo；沒有修改 VocaLinux 設定或開機預載選擇。
+
+- 所有 Turbo 模型檔案核對固定來源 hash，原生 LoadModel 實際載入為 WhisperModel／CTranslate2 Whisper、CUDA、float32，並驗證 en、zh、auto／省略語言的傳遞及繁體 text／segments 一致。見 [原生模型證據](validation/whisper-turbo-model.json)與[後端擴充 hash](validation/whisper-turbo-extension.json)。
+- 獨立 8768 與正式 8767，各測中文、純英文及混合樣本的 zh、en、auto、省略 language，共各 12 次 API 轉錄；均為非空 JSON，合適語言下中文繁體及英文關鍵字通過。見[獨立埠 API](validation/whisper-turbo-staging-api.json)與[正式 API](validation/whisper-turbo-api.json)。training 在這個短樣本有辨識出，但不代表所有英文混合詞都正確。
+- 原有同批 30 段錄音透過原生 Turbo API 重播，正規化輸出 30/30 與先前 Turbo 比較結果相同。這是部署一致性，不是 30/30 辨識正確。見[同音訊核對](validation/whisper-turbo-native-parity.json)。
+- 正式服務重啟後列出四個模型，預載仍為 SenseVoice，隨後 Turbo 與完整版本的 API 均通過。見[重啟證據](validation/whisper-turbo-restart.json)。完整 Whisper API 使用省略 --model 的舊指令回歸通過。
+- 正式服務完成 Turbo → 完整 Whisper → SenseVoice → Turbo → 完整 Whisper，每次 system endpoint 僅列出當次請求模型，最終恢復原本使用的完整 Whisper。見[切換證據](validation/whisper-turbo-switch.json)。SenseVoice 另以原生 LoadModel 再次確認 CPU、917 個 float32 參數張量、設定及 VAD hash，見[SenseVoice 回歸](validation/whisper-turbo-sensevoice-model.json)。
+- prepare／publish 重跑通過；scripts/test_whisper_profiles.py 檢查完整與 Turbo 各自發布，拒絕其他模型 ID、錯誤權重 hash 及變更後的設定證據。Python 編譯及 Git whitespace 檢查通過。
+- Installed GUI 顯示四個模型及 Turbo 的 Idle 項目。8768 臨時程序已停止，正式 user service 維持 active／enabled；原 8766 服務未變更。
+
+未測使用者麥克風／VocaLinux 完整聽寫、重新開機、其他電腦、斷網啟動、長錄音、高負載或 GPU FP16／INT8。兩個 Whisper profile 都可能把英文辨成中文；模型切換後首次載入延遲不等於暖機後辨識速度。

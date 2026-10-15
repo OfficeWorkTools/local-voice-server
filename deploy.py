@@ -126,7 +126,7 @@ def write_unit(service_port):
                "--load-to-memory", selected_model(), "--max-active-backends", "1"]
     UNIT_PATH.parent.mkdir(parents=True, exist_ok=True)
     UNIT_PATH.write_text(f"""[Unit]
-Description=LocalAI Traditional Chinese CPU ASR
+Description=LocalAI Traditional Chinese ASR
 
 [Service]
 Type=simple

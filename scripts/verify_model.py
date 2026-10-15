@@ -1,4 +1,4 @@
-"""Verify the selected profile's actual class, weights, CPU and precision."""
+"""Verify the selected FunASR profile or an explicit Whisper backend profile."""
 import collections
 import hashlib
 import json
@@ -6,6 +6,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if len(sys.argv) == 2 and sys.argv[1] in ("whisper-large-v3", "whisper-large-v3-turbo"):
+    from verify_whisper_model import verify
+    verify(sys.argv[1])
+    sys.exit(0)
+if sys.argv[1:]:
+    raise SystemExit("Supported optional arguments: whisper-large-v3, whisper-large-v3-turbo")
 STATE = ROOT / ".localai"
 BACKEND = STATE / "backends/cpu-funasr"
 sys.path.insert(0, str(BACKEND))

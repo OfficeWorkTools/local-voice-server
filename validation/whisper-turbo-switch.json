@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "sequence": [
+    {
+      "model": "whisper-large-v3-turbo",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 7.25,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "whisper-large-v3-turbo",
+          "backend": "faster-whisper"
+        }
+      ]
+    },
+    {
+      "model": "whisper-large-v3",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 10.767,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "whisper-large-v3",
+          "backend": "faster-whisper"
+        }
+      ]
+    },
+    {
+      "model": "sensevoice-fp32",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 10.844,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "sensevoice-fp32",
+          "backend": "funasr"
+        }
+      ]
+    },
+    {
+      "model": "whisper-large-v3-turbo",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 6.947,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "whisper-large-v3-turbo",
+          "backend": "faster-whisper"
+        }
+      ]
+    },
+    {
+      "model": "whisper-large-v3",
+      "transcription": {
+        "sample": "chinese.wav",
+        "language": "zh",
+        "text": "甚至出現交易幾乎停滯的情況",
+        "seconds": 10.002,
+        "segments_consistent": true
+      },
+      "loaded_models": [
+        {
+          "id": "whisper-large-v3",
+          "backend": "faster-whisper"
+        }
+      ]
+    }
+  ],
+  "final_model": "whisper-large-v3"
+}

@@ -1,0 +1,117 @@
+{
+  "port": 8767,
+  "states": [
+    {
+      "requested": "whisper-large-v3",
+      "resident": [
+        "whisper-large-v3"
+      ],
+      "system": {
+        "backends": [
+          "cpu-funasr",
+          "cuda12-faster-whisper",
+          "faster-whisper",
+          "funasr"
+        ],
+        "loaded_models": [
+          {
+            "id": "whisper-large-v3",
+            "backend": "faster-whisper",
+            "process": {
+              "pid": 223237,
+              "rss_bytes": 1889370112,
+              "memory_percent": 6.0507474,
+              "cpu_percent": 4.597118046022018,
+              "started_at": "2026-10-15T02:10:38Z"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "requested": "sensevoice-fp32",
+      "resident": [
+        "sensevoice-fp32"
+      ],
+      "system": {
+        "backends": [
+          "faster-whisper",
+          "funasr",
+          "cpu-funasr",
+          "cuda12-faster-whisper"
+        ],
+        "loaded_models": [
+          {
+            "id": "sensevoice-fp32",
+            "backend": "funasr",
+            "process": {
+              "pid": 224458,
+              "rss_bytes": 1666732032,
+              "memory_percent": 5.337744,
+              "started_at": "2026-10-15T02:11:45Z"
+            }
+          }
+        ]
+      },
+      "text": "甚至出現交易幾乎停滯的情況",
+      "http_seconds": 9.696
+    },
+    {
+      "requested": "whisper-large-v3",
+      "resident": [
+        "whisper-large-v3"
+      ],
+      "system": {
+        "backends": [
+          "cpu-funasr",
+          "cuda12-faster-whisper",
+          "faster-whisper",
+          "funasr"
+        ],
+        "loaded_models": [
+          {
+            "id": "whisper-large-v3",
+            "backend": "faster-whisper",
+            "process": {
+              "pid": 224849,
+              "rss_bytes": 1884786688,
+              "memory_percent": 6.036069,
+              "started_at": "2026-10-15T02:11:55Z"
+            }
+          }
+        ]
+      },
+      "text": "甚至出現交易幾乎停滯的情況",
+      "http_seconds": 9.094
+    },
+    {
+      "requested": "sensevoice-fp32",
+      "resident": [
+        "sensevoice-fp32"
+      ],
+      "system": {
+        "backends": [
+          "cuda12-faster-whisper",
+          "faster-whisper",
+          "funasr",
+          "cpu-funasr"
+        ],
+        "loaded_models": [
+          {
+            "id": "sensevoice-fp32",
+            "backend": "funasr",
+            "process": {
+              "pid": 225320,
+              "rss_bytes": 1666732032,
+              "memory_percent": 5.337744,
+              "started_at": "2026-10-15T02:12:04Z"
+            }
+          }
+        ]
+      },
+      "text": "甚至出現交易幾乎停滯的情況",
+      "http_seconds": 10.545
+    }
+  ],
+  "passed": true
+}

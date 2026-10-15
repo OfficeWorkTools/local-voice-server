@@ -1,0 +1,12 @@
+{
+  "model": "whisper-large-v3-turbo",
+  "backend_digest": "sha256:c0117f5cb7abd374049e766209dbc157f6cd459a99a6030e1d0d5f9c7b413778",
+  "upstream_sha256": "f02eea83eb8b141e02c585ff06b4fd8f75e8d4d2977fa50adc65cf9120515346",
+  "patched_sha256": "e42e68c51a6e0a883ce2547b44d8ac9b8bcb50148f18fdee1b4d22a1368455e4",
+  "conversion_module_sha256": "30f1b39f68288dbd68c9aadae6b4ceb596113d54c62edd07bfde064d8ac84851",
+  "config_sha256": "b9c91f97d767b6a175915d7d25a1d206669949d007f70fa8e3309ccbb139b6f1",
+  "precision": "float32",
+  "device": "cuda",
+  "opencc": "s2t",
+  "request_language_forwarded": true
+}

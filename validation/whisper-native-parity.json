@@ -1,0 +1,219 @@
+{
+  "model": "whisper-large-v3",
+  "port": 8768,
+  "comparison": "Same 30 clips; ignore punctuation/case/spacing/traditional variants for parity only",
+  "results": [
+    {
+      "row": 3,
+      "text": "我們要講Decoder",
+      "benchmark_text": "我們要講Decoder",
+      "canonical_match": true,
+      "http_seconds": 0.573
+    },
+    {
+      "row": 5,
+      "text": "已經講了 Encoder",
+      "benchmark_text": "已經講了 Encoder",
+      "canonical_match": true,
+      "http_seconds": 0.538
+    },
+    {
+      "row": 12,
+      "text": "這個叫做Auto Regressive的Decoder",
+      "benchmark_text": "這個叫做Auto Regressive的Decoder",
+      "canonical_match": true,
+      "http_seconds": 0.64
+    },
+    {
+      "row": 31,
+      "text": "輸出會變成一排 Vector",
+      "benchmark_text": "輸出會變成一排 Vector",
+      "canonical_match": true,
+      "http_seconds": 0.622
+    },
+    {
+      "row": 37,
+      "text": "就是輸入一個vector sequence",
+      "benchmark_text": "就是輸入一個vector sequence",
+      "canonical_match": true,
+      "http_seconds": 0.605
+    },
+    {
+      "row": 48,
+      "text": "你先假設商號就是有某種方法",
+      "benchmark_text": "你先假設商號就是有某種方法",
+      "canonical_match": true,
+      "http_seconds": 0.675
+    },
+    {
+      "row": 1209,
+      "text": "這招就叫做guided attention",
+      "benchmark_text": "這招就叫做guided attention",
+      "canonical_match": true,
+      "http_seconds": 0.623
+    },
+    {
+      "row": 1210,
+      "text": "像這種該點做的任務都用得上",
+      "benchmark_text": "像這種該點做的任務都用得上",
+      "canonical_match": true,
+      "http_seconds": 0.676
+    },
+    {
+      "row": 1222,
+      "text": "比如說區霸",
+      "benchmark_text": "比如說區霸",
+      "canonical_match": true,
+      "http_seconds": 0.575
+    },
+    {
+      "row": 1223,
+      "text": "我是Summer Ria",
+      "benchmark_text": "我是Summer Ria",
+      "canonical_match": true,
+      "http_seconds": 0.551
+    },
+    {
+      "row": 1234,
+      "text": "Get the attention 要做的事情就是",
+      "benchmark_text": "Get the attention 要做的事情就是",
+      "canonical_match": true,
+      "http_seconds": 0.616
+    },
+    {
+      "row": 1236,
+      "text": "我們要去蓋的",
+      "benchmark_text": "我們要去蓋的",
+      "canonical_match": true,
+      "http_seconds": 0.573
+    },
+    {
+      "row": 4002,
+      "text": "看到red eyes",
+      "benchmark_text": "看到red eyes",
+      "canonical_match": true,
+      "http_seconds": 0.496
+    },
+    {
+      "row": 4012,
+      "text": "就可以做到conditional gain",
+      "benchmark_text": "就可以做到conditional gain",
+      "canonical_match": true,
+      "http_seconds": 0.564
+    },
+    {
+      "row": 4015,
+      "text": "拿這樣子的positive example",
+      "benchmark_text": "拿這樣子的positive example",
+      "canonical_match": true,
+      "http_seconds": 0.567
+    },
+    {
+      "row": 4016,
+      "text": "還有negative example",
+      "benchmark_text": "還有negative example",
+      "canonical_match": true,
+      "http_seconds": 0.538
+    },
+    {
+      "row": 4017,
+      "text": "來訓練這樣的discriminator",
+      "benchmark_text": "來訓練這樣的discriminator",
+      "canonical_match": true,
+      "http_seconds": 0.637
+    },
+    {
+      "row": 4034,
+      "text": "然後Generator跟Discriminator",
+      "benchmark_text": "然後Generator跟Discriminator",
+      "canonical_match": true,
+      "http_seconds": 0.603
+    },
+    {
+      "row": 8000,
+      "text": "這邊有五個不同的 Network",
+      "benchmark_text": "這邊有五個不同的 Network",
+      "canonical_match": true,
+      "http_seconds": 0.632
+    },
+    {
+      "row": 8001,
+      "text": "Resnet 152層 Resnet 101層",
+      "benchmark_text": "Resnet 152層 Resnet 101層",
+      "canonical_match": true,
+      "http_seconds": 0.645
+    },
+    {
+      "row": 8002,
+      "text": "Resnet 50 BGG16 還有Google LUNNET",
+      "benchmark_text": "Resnet 50 BGG16 還有Google LUNNET",
+      "canonical_match": true,
+      "http_seconds": 0.699
+    },
+    {
+      "row": 8004,
+      "text": "好 那這個KARLEN",
+      "benchmark_text": "好 那這個KARLEN",
+      "canonical_match": true,
+      "http_seconds": 0.574
+    },
+    {
+      "row": 8007,
+      "text": "那這個肉啊",
+      "benchmark_text": "那這個肉啊",
+      "canonical_match": true,
+      "http_seconds": 0.513
+    },
+    {
+      "row": 8008,
+      "text": "這代表說我們有五個Positive Network",
+      "benchmark_text": "這代表說我們有五個Positive Network",
+      "canonical_match": true,
+      "http_seconds": 0.698
+    },
+    {
+      "row": 12010,
+      "text": "往往就是RL可以派上用場的時候",
+      "benchmark_text": "往往就是RL可以派上用場的時候",
+      "canonical_match": true,
+      "http_seconds": 0.654
+    },
+    {
+      "row": 12021,
+      "text": "得到一個叫做reward的東西",
+      "benchmark_text": "得到一個叫做reward的東西",
+      "canonical_match": true,
+      "http_seconds": 0.619
+    },
+    {
+      "row": 12030,
+      "text": "這是今天這一份投影片的outline",
+      "benchmark_text": "這是今天這一份投影片的outline",
+      "canonical_match": true,
+      "http_seconds": 0.637
+    },
+    {
+      "row": 12036,
+      "text": "比如說從mark of decision process開始講起",
+      "benchmark_text": "比如說從mark of decision process開始講起",
+      "canonical_match": true,
+      "http_seconds": 0.647
+    },
+    {
+      "row": 12042,
+      "text": "跟一般的 machine learning 好像不太一樣哦",
+      "benchmark_text": "跟一般的 machine learning 好像不太一樣哦",
+      "canonical_match": true,
+      "http_seconds": 0.663
+    },
+    {
+      "row": 12044,
+      "text": "RL他跟我們這門課學的 machine learning",
+      "benchmark_text": "RL他跟我們這門課學的 machine learning",
+      "canonical_match": true,
+      "http_seconds": 0.712
+    }
+  ],
+  "canonical_matches": 30,
+  "samples": 30
+}

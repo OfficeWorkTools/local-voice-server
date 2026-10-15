@@ -1,0 +1,97 @@
+{
+  "model_list": {
+    "object": "list",
+    "data": [
+      {
+        "id": "whisper-large-v3",
+        "object": "model"
+      },
+      {
+        "id": "paraformer-zh",
+        "object": "model"
+      },
+      {
+        "id": "sensevoice-fp32",
+        "object": "model"
+      }
+    ]
+  },
+  "states": [
+    {
+      "model": "sensevoice-fp32",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "system": {
+        "backends": [
+          "cuda12-faster-whisper",
+          "funasr",
+          "faster-whisper",
+          "cpu-funasr"
+        ],
+        "loaded_models": [
+          {
+            "id": "sensevoice-fp32",
+            "backend": "funasr",
+            "process": {
+              "pid": 226939,
+              "rss_bytes": 1667100672,
+              "memory_percent": 5.338925,
+              "started_at": "2026-10-15T02:12:51Z"
+            }
+          }
+        ]
+      },
+      "seconds": 0.27
+    },
+    {
+      "model": "whisper-large-v3",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "system": {
+        "backends": [
+          "cpu-funasr",
+          "cuda12-faster-whisper",
+          "funasr",
+          "faster-whisper"
+        ],
+        "loaded_models": [
+          {
+            "id": "whisper-large-v3",
+            "backend": "faster-whisper",
+            "process": {
+              "pid": 228408,
+              "rss_bytes": 1884737536,
+              "memory_percent": 6.0359116,
+              "started_at": "2026-10-15T02:13:43Z"
+            }
+          }
+        ]
+      },
+      "seconds": 9.718
+    },
+    {
+      "model": "sensevoice-fp32",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "system": {
+        "backends": [
+          "faster-whisper",
+          "cpu-funasr",
+          "cuda12-faster-whisper",
+          "funasr"
+        ],
+        "loaded_models": [
+          {
+            "id": "sensevoice-fp32",
+            "backend": "funasr",
+            "process": {
+              "pid": 228872,
+              "rss_bytes": 1666752512,
+              "memory_percent": 5.3378096,
+              "started_at": "2026-10-15T02:13:52Z"
+            }
+          }
+        ]
+      },
+      "seconds": 10.11
+    }
+  ],
+  "restart_and_switch_passed": true
+}

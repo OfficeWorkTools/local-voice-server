@@ -1,0 +1,9 @@
+name: whisper-large-v3
+description: Full Whisper large-v3 on NVIDIA GPU, FP32 inference, Traditional Chinese via OpenCC s2t
+backend: faster-whisper
+cuda: true
+f16: false
+known_usecases:
+  - transcript
+parameters:
+  model: Whisper-large-v3

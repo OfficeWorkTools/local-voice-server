@@ -1,0 +1,46 @@
+{
+  "model_list": {
+    "object": "list",
+    "data": [
+      {
+        "id": "paraformer-zh",
+        "object": "model"
+      },
+      {
+        "id": "sensevoice-fp32",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3-turbo",
+        "object": "model"
+      },
+      {
+        "id": "whisper-large-v3",
+        "object": "model"
+      }
+    ]
+  },
+  "system_after_service_restart": {
+    "backends": [
+      "cpu-funasr",
+      "cuda12-faster-whisper",
+      "funasr",
+      "faster-whisper"
+    ],
+    "loaded_models": [
+      {
+        "id": "sensevoice-fp32",
+        "backend": "funasr",
+        "process": {
+          "pid": 304857,
+          "rss_bytes": 1672900608,
+          "memory_percent": 5.357499,
+          "cpu_percent": 0.058093882734799165,
+          "started_at": "2026-10-15T02:50:35Z"
+        }
+      }
+    ]
+  },
+  "startup_model": "sensevoice-fp32",
+  "passed": true
+}

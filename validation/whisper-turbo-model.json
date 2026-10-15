@@ -1,0 +1,19 @@
+{
+  "model": "whisper-large-v3-turbo",
+  "source_model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+  "model_class": "WhisperModel",
+  "engine_class": "Whisper",
+  "device": "cuda",
+  "compute_type": "float32",
+  "files_verified": true,
+  "model_sha256": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+  "native_backend_load_passed": true,
+  "packages": {
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "torch": "2.4.1",
+    "numpy": "2.2.6"
+  },
+  "language_forwarding_and_conversion_passed": true
+}

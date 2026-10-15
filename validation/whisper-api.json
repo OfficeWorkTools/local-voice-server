@@ -1,0 +1,99 @@
+{
+  "port": 8767,
+  "model": "whisper-large-v3",
+  "passed": true,
+  "results": [
+    {
+      "sample": "chinese.wav",
+      "language": "zh",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 9.311,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "en",
+      "text": " 甚至出現交易幾乎停滯的情況。",
+      "seconds": 0.742,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": "auto",
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 1.073,
+      "segments_consistent": true
+    },
+    {
+      "sample": "chinese.wav",
+      "language": null,
+      "text": "甚至出現交易幾乎停滯的情況",
+      "seconds": 1.073,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "zh",
+      "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.892,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "en",
+      "text": " And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 0.908,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": "auto",
+      "text": " And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 1.278,
+      "segments_consistent": true
+    },
+    {
+      "sample": "english.wav",
+      "language": null,
+      "text": " And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "seconds": 1.281,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "zh",
+      "text": "放進你的圈裏面",
+      "seconds": 0.58,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "en",
+      "text": " 放進你的圈裏裏面",
+      "seconds": 0.599,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": "auto",
+      "text": "放進你的圈裏面",
+      "seconds": 0.963,
+      "segments_consistent": true
+    },
+    {
+      "sample": "mixed.wav",
+      "language": null,
+      "text": "放進你的圈裏面",
+      "seconds": 0.952,
+      "segments_consistent": true
+    }
+  ],
+  "training_recovered": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "patched_sha256": "e42e68c51a6e0a883ce2547b44d8ac9b8bcb50148f18fdee1b4d22a1368455e4",
+  "limits": "Only these three short clips and JSON responses are validated; no user microphone recording."
+}

@@ -1,0 +1,19 @@
+{
+  "model": "whisper-large-v3",
+  "source_model": "Systran/faster-whisper-large-v3",
+  "revision": "edaa852ec7e145841d8ffdb056a99866b5f0a478",
+  "model_class": "WhisperModel",
+  "engine_class": "Whisper",
+  "device": "cuda",
+  "compute_type": "float32",
+  "files_verified": true,
+  "model_sha256": "69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1",
+  "native_backend_load_passed": true,
+  "packages": {
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "torch": "2.4.1",
+    "numpy": "2.2.6"
+  },
+  "language_forwarding_and_conversion_passed": true
+}

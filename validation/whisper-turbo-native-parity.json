@@ -1,0 +1,249 @@
+{
+  "model": "whisper-large-v3-turbo",
+  "port": 8768,
+  "sample_count": 30,
+  "matches": 30,
+  "results": [
+    {
+      "row": 3,
+      "audio_sha256": "02ff0250d802eb62daf63af353d8603153366165c84bc45714ce81805895aff4",
+      "text": "我們要講Decoder",
+      "benchmark_text": "我們要講Decoder",
+      "canonical_match": true,
+      "seconds": 0.4115
+    },
+    {
+      "row": 5,
+      "audio_sha256": "3514c069c3cf8427b77fb165a880ebd3c560277b4f1d65ec56b791efa327027b",
+      "text": "已經講了encoder",
+      "benchmark_text": "已經講了encoder",
+      "canonical_match": true,
+      "seconds": 0.3798
+    },
+    {
+      "row": 12,
+      "audio_sha256": "3047763913385c0059b47f071a6cb94cbb1c2af8866bd84e03b38a5eda95f105",
+      "text": "這個叫做autoregressive decoder",
+      "benchmark_text": "這個叫做autoregressive decoder",
+      "canonical_match": true,
+      "seconds": 0.3981
+    },
+    {
+      "row": 31,
+      "audio_sha256": "87dfbf60679bdf122015aa1aaf8d69e06fa2887f71b8c6fd67b919a6cc59c403",
+      "text": "輸出會變成一排Vector",
+      "benchmark_text": "輸出會變成一排Vector",
+      "canonical_match": true,
+      "seconds": 0.405
+    },
+    {
+      "row": 37,
+      "audio_sha256": "a24189f7398aefda4db2f1849941aa877410a9d79273038fb1916d8bc35c7d29",
+      "text": "就是輸入一個vector sequence",
+      "benchmark_text": "就是輸入一個vector sequence",
+      "canonical_match": true,
+      "seconds": 0.4086
+    },
+    {
+      "row": 48,
+      "audio_sha256": "6d69228224a78e4bf25295692fd0b788e428e131000f5d258ecda394328670bc",
+      "text": "你先假設傷號就是有某種方法",
+      "benchmark_text": "你先假設傷號就是有某種方法",
+      "canonical_match": true,
+      "seconds": 0.41
+    },
+    {
+      "row": 1209,
+      "audio_sha256": "e538348a2b4595881c779da5c6ad63452a380fe3c0ea968d478511c8ef95da40",
+      "text": "這招就叫做 I did the attention",
+      "benchmark_text": "這招就叫做 I did the attention",
+      "canonical_match": true,
+      "seconds": 0.3911
+    },
+    {
+      "row": 1210,
+      "audio_sha256": "635a68a19817f7892f7f9a85b0c1bf7ed8b0fbd04f6d2122b6b9a431c85ead0b",
+      "text": "那像這種概念做的任務都用得上",
+      "benchmark_text": "那像這種概念做的任務都用得上",
+      "canonical_match": true,
+      "seconds": 0.4135
+    },
+    {
+      "row": 1222,
+      "audio_sha256": "341e16524ecfd03c07c77052f53922aff23cdd3d80e3a73009c85842d4e5132d",
+      "text": "比如說缺霸",
+      "benchmark_text": "比如說缺霸",
+      "canonical_match": true,
+      "seconds": 0.3868
+    },
+    {
+      "row": 1223,
+      "audio_sha256": "36baa9994d36a1ca276b46d8eb24561af7e6d25c4d7b5928befd4ca21f1a3748",
+      "text": "如果是 summary",
+      "benchmark_text": "如果是 summary",
+      "canonical_match": true,
+      "seconds": 0.3734
+    },
+    {
+      "row": 1234,
+      "audio_sha256": "a449666d6187be4ac5e1acc529209f17a467e7e2765f06302de9002339e38dc4",
+      "text": "Gate attention要做的事情就是",
+      "benchmark_text": "Gate attention要做的事情就是",
+      "canonical_match": true,
+      "seconds": 0.3882
+    },
+    {
+      "row": 1236,
+      "audio_sha256": "9768556a09c10e24b8baa96e4a2594daf7aa3c91ccd745a4dde548bfd901f99c",
+      "text": "我們要去這個蓋的",
+      "benchmark_text": "我們要去這個蓋的",
+      "canonical_match": true,
+      "seconds": 0.3829
+    },
+    {
+      "row": 4002,
+      "audio_sha256": "72de3da3600e07414a9799cc57db8a103d66d5a52296e980e50cfacd1305d3f1",
+      "text": "看到 Red Ice",
+      "benchmark_text": "看到 Red Ice",
+      "canonical_match": true,
+      "seconds": 0.3731
+    },
+    {
+      "row": 4012,
+      "audio_sha256": "6b2835a70903167230faaad9a98bc93f51253066065ac6822c13e14c074c77a4",
+      "text": "就可以做到conditional gain",
+      "benchmark_text": "就可以做到conditional gain",
+      "canonical_match": true,
+      "seconds": 0.3871
+    },
+    {
+      "row": 4015,
+      "audio_sha256": "94aa46cfd08d5a27855e7a4d9f01a9bc1b3b7fb1efc76c003c9c45675272ccd0",
+      "text": "拿這樣子的positive example",
+      "benchmark_text": "拿這樣子的positive example",
+      "canonical_match": true,
+      "seconds": 0.3868
+    },
+    {
+      "row": 4016,
+      "audio_sha256": "bef580ad38188945f32e976db5e2bcceee789facf970327e355ca9631c96943a",
+      "text": "還有next example",
+      "benchmark_text": "還有next example",
+      "canonical_match": true,
+      "seconds": 0.3728
+    },
+    {
+      "row": 4017,
+      "audio_sha256": "524118c5f45d7176d23649fe69d293ddd132d6f0099b22a9714ca860b9b697bb",
+      "text": "來訓練這樣 discriminator",
+      "benchmark_text": "來訓練這樣 discriminator",
+      "canonical_match": true,
+      "seconds": 0.3935
+    },
+    {
+      "row": 4034,
+      "audio_sha256": "108cae7c8801a67f79e153da9708825e83fa5fb66112da7a5161adec5b8db849",
+      "text": "然後Generator跟Discriminator",
+      "benchmark_text": "然後Generator跟Discriminator",
+      "canonical_match": true,
+      "seconds": 0.8534
+    },
+    {
+      "row": 8000,
+      "audio_sha256": "08d113d239e77b76190b717b40d9b5f0a89fe3966e2100c3a3a721bedc614603",
+      "text": "這邊有五個不同的內臥",
+      "benchmark_text": "這邊有五個不同的內臥",
+      "canonical_match": true,
+      "seconds": 0.9492
+    },
+    {
+      "row": 8001,
+      "audio_sha256": "9a072e2221ae150a483edbb725bfc927dd472198df326c9b359c43874490e553",
+      "text": "Resnet 152層,Resnet 1001層",
+      "benchmark_text": "Resnet 152層,Resnet 1001層",
+      "canonical_match": true,
+      "seconds": 0.7886
+    },
+    {
+      "row": 8002,
+      "audio_sha256": "b854f8fa1a8f0fe627455119e4707d155ae47fae51167e9d229961a5bb2672c7",
+      "text": "Resnet50 BGG16 還有Google欄",
+      "benchmark_text": "Resnet50 BGG16 還有Google欄",
+      "canonical_match": true,
+      "seconds": 0.7131
+    },
+    {
+      "row": 8004,
+      "audio_sha256": "448f19af68ed9973b96f743e12ba04ee7c756300790931ca2a721126a6205e08",
+      "text": "那這個Color呢",
+      "benchmark_text": "那這個Color呢",
+      "canonical_match": true,
+      "seconds": 0.6755
+    },
+    {
+      "row": 8007,
+      "audio_sha256": "1a95c3b92b20b99eeca1131acebfdbfd8114107f40717c48fabc1abfc7624a35",
+      "text": "那這個肉啊",
+      "benchmark_text": "那這個肉啊",
+      "canonical_match": true,
+      "seconds": 0.6335
+    },
+    {
+      "row": 8008,
+      "audio_sha256": "0659b4198c43d2c9147b4a257dff3bd4631560278b58764bb0fd06075cb76a87",
+      "text": "這代表說我們有5個plasty的內容",
+      "benchmark_text": "這代表說我們有5個plasty的內容",
+      "canonical_match": true,
+      "seconds": 0.5882
+    },
+    {
+      "row": 12010,
+      "audio_sha256": "ab149cea01d4cdd09089d540712a6359eaea6b1ea4f8596c72ca37b92e6a7fbf",
+      "text": "往往就是RL可以派上用場的時候",
+      "benchmark_text": "往往就是RL可以派上用場的時候",
+      "canonical_match": true,
+      "seconds": 0.398
+    },
+    {
+      "row": 12021,
+      "audio_sha256": "82f930cb79be5498ce8d21986c43ba3b60f1078ac3d0b6b4a513972960773346",
+      "text": "得到一個叫做reward的東西",
+      "benchmark_text": "得到一個叫做reward的東西",
+      "canonical_match": true,
+      "seconds": 0.3942
+    },
+    {
+      "row": 12030,
+      "audio_sha256": "8e8bd0f0fa3cc50d9e492d2346785934b7d8f5672b5c9a5994fcf75bd956f157",
+      "text": "這是今天這份投影片的Outline",
+      "benchmark_text": "這是今天這份投影片的Outline",
+      "canonical_match": true,
+      "seconds": 0.3967
+    },
+    {
+      "row": 12036,
+      "audio_sha256": "88f3179234ab9be2ba0e18be6649a9c950caa8aa285d229b5e238310eb371b04",
+      "text": "比如說從Markov decision process開始講起",
+      "benchmark_text": "比如說從Markov decision process開始講起",
+      "canonical_match": true,
+      "seconds": 0.4083
+    },
+    {
+      "row": 12042,
+      "audio_sha256": "1a6366927c1d0437be0be3f8002749b779964e9551bed7022000ca99574dc6ef",
+      "text": "跟一般的迅人你好像不太一樣",
+      "benchmark_text": "跟一般的迅人你好像不太一樣",
+      "canonical_match": true,
+      "seconds": 0.4069
+    },
+    {
+      "row": 12044,
+      "audio_sha256": "79aaf742a79782dacfc30422651fe72cdf162c5499a83620b851705d80026534",
+      "text": "RL他跟我們這門課學的machine learning",
+      "benchmark_text": "RL他跟我們這門課學的machine learning",
+      "canonical_match": true,
+      "seconds": 0.4091
+    }
+  ],
+  "limits": "Deployment parity with the prior Turbo benchmark, not transcription accuracy. Timing is one pass and not the controlled performance benchmark."
+}
