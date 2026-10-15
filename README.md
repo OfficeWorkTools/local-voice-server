@@ -1,4 +1,4 @@
-# LocalAI ASR：繁體輸出與模型切換
+# local-voice-server：本機語音轉文字服務
 
 ## 給人看的：用途與能力
 
@@ -202,8 +202,8 @@ v4.11.0 的音訊 endpoint 沒有已驗證的通用 OpenCC 配置；chat filter 
 先確認空埠、資源與 user systemd。不要停止無關服務或操作 VocaLinux。
 
 ```bash
-git clone https://github.com/OfficeWorkTools/localai-sensevoice-fp32.git
-cd localai-sensevoice-fp32
+git clone https://github.com/OfficeWorkTools/local-voice-server.git
+cd local-voice-server
 python3 deploy.py install --model sensevoice-fp32
 ```
 
